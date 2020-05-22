@@ -47,7 +47,9 @@ int main (void) {
 
   SystemCoreClockUpdate();              // Update System Core Clock info
 
+#ifdef RTE_VIO_BOARD
   vioInit();                            // Initialize Virtual I/O
+#endif
 
   osKernelInitialize();                 // Initialize CMSIS-RTOS2
   osThreadNew(app_main, NULL, NULL);    // Create application main thread
@@ -60,7 +62,7 @@ int main (void) {
  * NXP FSL driver callback implementations
  *---------------------------------------------------------------------------*/
 
-#if (RTE_SPI8 != 0)
+#if (defined(RTE_SPI8) && (RTE_SPI8 != 0))
 uint32_t SPI8_GetFreq(void) {
   return CLOCK_GetHsLspiClkFreq();
 }
@@ -72,7 +74,7 @@ void SPI8_DeinitPins(void) {
 }
 #endif
 
-#if (RTE_USART2 != 0)
+#if (defined(RTE_USART2) && (RTE_USART2 != 0))
 uint32_t USART2_GetFreq(void) {
   return CLOCK_GetFlexCommClkFreq(2U);
 }

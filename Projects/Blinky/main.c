@@ -47,7 +47,9 @@ int main (void) {
 
   SystemCoreClockUpdate();              // Update System Core Clock info
 
+#ifdef RTE_VIO_BOARD
   vioInit();                            // Initialize Virtual I/O
+#endif
 
   osKernelInitialize();                 // Initialize CMSIS-RTOS2
   osThreadNew(app_main, NULL, NULL);    // Create application main thread
