@@ -173,7 +173,7 @@ else
 fi
 
 # Run Pack Check and generate PackName file with version
-"${PACKCHK}" "${PACK_BUILD}/${PACK_VENDOR}.${PACK_NAME}.pdsc" -i ${CMSIS_PACK_ROOT}/.Web/NXP.LPC55S69_DFP.pdsc -i ${CMSIS_PACK_ROOT}/.Web/NXP.LPCXpresso55S69_BSP.pdsc -i ${CMSIS_PACK_ROOT}/.Web/ARM.CMSIS.pdsc -i ${CMSIS_PACK_ROOT}/.Web/Keil.ARM_Compiler.pdsc -n PackName.txt
+"${PACKCHK}" "${PACK_BUILD}/${PACK_VENDOR}.${PACK_NAME}.pdsc" -i "${CMSIS_PACK_ROOT}/.Web/NXP.LPC55S69_DFP.pdsc" -i "${CMSIS_PACK_ROOT}/.Web/NXP.LPCXpresso55S69_BSP.pdsc" -i "${CMSIS_PACK_ROOT}/.Web/ARM.CMSIS.pdsc" -i "${CMSIS_PACK_ROOT}/.Web/Keil.ARM_Compiler.pdsc" -n PackName.txt
 errorlevel=$?
 if [ $errorlevel -ne 0 ]; then
   echo "build aborted: pack check failed"

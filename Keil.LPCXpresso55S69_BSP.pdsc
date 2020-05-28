@@ -13,7 +13,11 @@
   </releases>
 
   <keywords>
+    <!-- keywords for indexing -->
+    <keyword>NXP</keyword>
     <keyword>Board Support Pack</keyword>
+    <keyword>LPC55S69</keyword>
+    <keyword>LPCXpresso55S69</keyword>
   </keywords>
 
   <requirements>
@@ -41,7 +45,7 @@
   <components>
     <!-- VIO driver -->
     <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="LPCXpresso55S69" Cversion="1.0.0" Capiversion="0.1.0" condition="LPCXpresso55S69 VIO">
-      <description>Virtual I/O implementation for NXP LPCXpresso55S69 board</description>
+      <description>Virtual I/O implementation for NXP LPCXpresso55S69 Board</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD
         #define RTE_VIO_LPCXPRESSO55S69

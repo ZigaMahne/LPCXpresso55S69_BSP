@@ -2,10 +2,10 @@
  * @file     vio_LPCXpresso55S69.c
  * @brief    Virtual I/O implementation for NXP LPCXpresso55S69 board
  * @version  V1.0.0
- * @date     19. May 2020
+ * @date     28. May 2020
  ******************************************************************************/
 /*
- * Copyright (c) 2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2020 Arm Limited (or its affiliates). All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -33,7 +33,6 @@ vioLED0           | vioSignalOut.0 | PIO1_6: LED RED                            
 vioLED1           | vioSignalOut.1 | PIO1_4: LED BLUE                               |
 vioLED2           | vioSignalOut.2 | PIO1_7: LED GREEN                              |
 */
-
 
 #include <stdio.h>
 #include <string.h>

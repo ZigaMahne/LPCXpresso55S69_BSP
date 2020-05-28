@@ -856,7 +856,7 @@
          </dcdx_profile>
          <dcdx_configurations/>
       </dcdx>
-      <periphs name="Peripherals" version="8.0" enabled="true" update_project_code="false">
+      <periphs name="Peripherals" version="8.0" enabled="true" update_project_code="true">
          <generated_project_files>
             <file path="RTE/Board_Support/LPC55S69JBD100_cm33_core0/peripherals.c" update_enabled="true"/>
             <file path="RTE/Board_Support/LPC55S69JBD100_cm33_core0/peripherals.h" update_enabled="true"/>

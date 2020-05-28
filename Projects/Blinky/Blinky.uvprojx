@@ -381,16 +381,6 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Documents</GroupName>
-          <Files>
-            <File>
-              <FileName>Abstract.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Abstract.txt</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>Application</GroupName>
           <Files>
             <File>
@@ -412,6 +402,26 @@
               <FileName>main.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\main.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>MCUXpresso</GroupName>
+          <Files>
+            <File>
+              <FileName>LPCXpresso55S69.mex</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPCXpresso55S69.mex</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Documentation</GroupName>
+          <Files>
+            <File>
+              <FileName>Abstract.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Abstract.txt</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------
- * Copyright (c) 2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2020 Arm Limited (or its affiliates). All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -31,5 +31,5 @@ __NO_RETURN void app_main (void *arg) {
   (void)arg;
 
   // Add user code here:
-  for (;;);
+  for (;;) {}
 }

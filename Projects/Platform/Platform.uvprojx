@@ -381,17 +381,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Documents</GroupName>
-          <Files>
-            <File>
-              <FileName>Abstract.txt</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Abstract.txt</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Application</GroupName>
+          <GroupName>App</GroupName>
           <Files>
             <File>
               <FileName>Platform.c</FileName>
@@ -401,7 +391,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Main</GroupName>
+          <GroupName>Board</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>
@@ -412,6 +402,26 @@
               <FileName>main.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\main.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>MCUXpresso</GroupName>
+          <Files>
+            <File>
+              <FileName>LPCXpresso55S69.mex</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPCXpresso55S69.mex</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Documentation</GroupName>
+          <Files>
+            <File>
+              <FileName>Abstract.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Abstract.txt</FilePath>
             </File>
           </Files>
         </Group>
@@ -882,7 +892,7 @@
         <LayPrjMark>1</LayPrjMark>
       </Layer>
       <Layer>
-        <LayName>Application</LayName>
+        <LayName>App</LayName>
         <LayDesc>Platform Application Layer</LayDesc>
         <LayKeys>Layer</LayKeys>
         <LayCat>RTOS</LayCat>
@@ -902,14 +912,29 @@
     </Layers>
     <LayAssign>
       <LayAsnItem>
-        <LayAsnType>2</LayAsnType>
-        <LayAsnName>.\Abstract.txt</LayAsnName>
-        <LayAsnLayerName>Application</LayAsnLayerName>
+        <LayAsnType>3</LayAsnType>
+        <LayAsnName>App</LayAsnName>
+        <LayAsnLayerName>App</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>2</LayAsnType>
         <LayAsnName>.\Platform.c</LayAsnName>
-        <LayAsnLayerName>Application</LayAsnLayerName>
+        <LayAsnLayerName>App</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>3</LayAsnType>
+        <LayAsnName>Documentation</LayAsnName>
+        <LayAsnLayerName>App</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>2</LayAsnType>
+        <LayAsnName>.\Abstract.txt</LayAsnName>
+        <LayAsnLayerName>App</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>3</LayAsnType>
+        <LayAsnName>Board</LayAsnName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>2</LayAsnType>
@@ -917,13 +942,18 @@
         <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
-        <LayAsnType>1</LayAsnType>
-        <LayAsnName>NXP::Board Support:SDK Project Template:project_template</LayAsnName>
+        <LayAsnType>2</LayAsnType>
+        <LayAsnName>.\main.h</LayAsnName>
         <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
-        <LayAsnType>1</LayAsnType>
-        <LayAsnName>ARM::CMSIS:RTOS2:Keil RTX5</LayAsnName>
+        <LayAsnType>3</LayAsnType>
+        <LayAsnName>MCUXpresso</LayAsnName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>2</LayAsnType>
+        <LayAsnName>.\LPCXpresso55S69.mex</LayAsnName>
         <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
@@ -933,7 +963,17 @@
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>1</LayAsnType>
+        <LayAsnName>ARM::CMSIS:RTOS2:Keil RTX5</LayAsnName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>1</LayAsnType>
         <LayAsnName>Keil::CMSIS Driver:VIO:Board</LayAsnName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>1</LayAsnType>
+        <LayAsnName>Keil.ARM Compiler::Compiler:Event Recorder</LayAsnName>
         <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
@@ -948,7 +988,7 @@
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>1</LayAsnType>
-        <LayAsnName>Keil.ARM Compiler::Compiler:Event Recorder</LayAsnName>
+        <LayAsnName>NXP::Board Support:SDK Project Template:project_template</LayAsnName>
         <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
@@ -1099,36 +1139,6 @@
       <LayAsnItem>
         <LayAsnType>1</LayAsnType>
         <LayAsnName>NXP::Device:SDK Utilities:serial_manager_uart</LayAsnName>
-        <LayAsnLayerName>Board</LayAsnLayerName>
-      </LayAsnItem>
-      <LayAsnItem>
-        <LayAsnType>2</LayAsnType>
-        <LayAsnName>.\main.h</LayAsnName>
-        <LayAsnLayerName>Board</LayAsnLayerName>
-      </LayAsnItem>
-      <LayAsnItem>
-        <LayAsnType>2</LayAsnType>
-        <LayAsnName>.\stdout_debug_console_LPCXpresso55S69.c</LayAsnName>
-        <LayAsnLayerName>Board</LayAsnLayerName>
-      </LayAsnItem>
-      <LayAsnItem>
-        <LayAsnType>2</LayAsnType>
-        <LayAsnName>.\Board.txt</LayAsnName>
-        <LayAsnLayerName>Board</LayAsnLayerName>
-      </LayAsnItem>
-      <LayAsnItem>
-        <LayAsnType>1</LayAsnType>
-        <LayAsnName>Keil.ARM Compiler::Compiler:I/O:STDOUT</LayAsnName>
-        <LayAsnLayerName>Board</LayAsnLayerName>
-      </LayAsnItem>
-      <LayAsnItem>
-        <LayAsnType>2</LayAsnType>
-        <LayAsnName>.\stdout_LPCXpresso55S69_debug_console.c</LayAsnName>
-        <LayAsnLayerName>Board</LayAsnLayerName>
-      </LayAsnItem>
-      <LayAsnItem>
-        <LayAsnType>1</LayAsnType>
-        <LayAsnName>Keil::Board Support:Template:STDOUT</LayAsnName>
         <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
     </LayAssign>

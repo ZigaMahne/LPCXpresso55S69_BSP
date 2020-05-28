@@ -21,7 +21,6 @@ functionalGroups:
   UUID: e2041cd4-ebb6-45a5-807f-e0c2dc047d48
   selectedCore: cm33_core1
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS **********/
-
 /* clang-format on */
 
 /***********************************************************************************************************************

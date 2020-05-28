@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------
- * Copyright (c) 2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2020 Arm Limited (or its affiliates). All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -32,7 +32,9 @@
 #include "fsl_debug_console.h"
 
 #include "cmsis_os2.h"
+#ifdef    RTE_VIO_BOARD
 #include "cmsis_vio.h"
+#endif
 
 /*---------------------------------------------------------------------------
  * Main function
@@ -55,5 +57,5 @@ int main (void) {
   osThreadNew(app_main, NULL, NULL);    // Create application main thread
   osKernelStart();                      // Start thread execution
 
-  for (;;);
+  for (;;) {}
 }

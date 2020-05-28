@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------
- * Copyright (c) 2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2020 Arm Limited (or its affiliates). All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -32,7 +32,9 @@
 #include "fsl_debug_console.h"
 
 #include "cmsis_os2.h"
+#ifdef    RTE_VIO_BOARD
 #include "cmsis_vio.h"
+#endif
 
 /*---------------------------------------------------------------------------
  * Main function
@@ -55,33 +57,17 @@ int main (void) {
   osThreadNew(app_main, NULL, NULL);    // Create application main thread
   osKernelStart();                      // Start thread execution
 
-  for (;;);
+  for (;;) {}
 }
 
 /*---------------------------------------------------------------------------
- * NXP FSL driver callback implementations
+ * NXP CMSIS drivers callback implementations
  *---------------------------------------------------------------------------*/
 
-#if (defined(RTE_SPI8) && (RTE_SPI8 != 0))
-uint32_t SPI8_GetFreq(void) {
-  return CLOCK_GetHsLspiClkFreq();
-}
-void SPI8_InitPins(void) {
-  // Pins are initialized in main function in BOARD_InitBootPins function
-}
-void SPI8_DeinitPins(void) {
-  // Pins deinitialization is not implemented
-}
-#endif
+uint32_t SPI8_GetFreq      (void) { return CLOCK_GetHsLspiClkFreq(); }
+void     SPI8_InitPins     (void) { /* Done in BOARD_InitBootPins function */ }
+void     SPI8_DeinitPins   (void) { /* Not implemented */ }
 
-#if (defined(RTE_USART2) && (RTE_USART2 != 0))
-uint32_t USART2_GetFreq(void) {
-  return CLOCK_GetFlexCommClkFreq(2U);
-}
-void USART2_InitPins(void) {
-  // Pins are initialized in main function in BOARD_InitBootPins function
-}
-void USART2_DeinitPins(void) {
-  // Pins deinitialization is not implemented
-}
-#endif
+uint32_t USART2_GetFreq    (void) { return CLOCK_GetFlexCommClkFreq(2U); }
+void     USART2_InitPins   (void) { /* Done in BOARD_InitBootPins function */ }
+void     USART2_DeinitPins (void) { /* Not implemented */ }
