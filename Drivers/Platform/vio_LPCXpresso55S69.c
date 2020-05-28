@@ -39,11 +39,10 @@ vioLED2           | vioSignalOut.2 | PIO1_7: LED GREEN                          
 #include <stdarg.h>
 #include "cmsis_vio.h"
 
-#include "RTE_Components.h"             // Component selection
+#include "RTE_Components.h"
 #include CMSIS_device_header
 
 #if !defined CMSIS_VOUT || !defined CMSIS_VIN
-// Add user includes here:
 #include "board.h"
 #endif
 
