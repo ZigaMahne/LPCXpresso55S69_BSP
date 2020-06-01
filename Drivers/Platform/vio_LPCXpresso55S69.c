@@ -87,11 +87,11 @@ void vioInit (void) {
   vioSignalIn  = 0U;
   vioSignalOut = 0U;
 
-  memset (vioPrintMem, 0, sizeof(vioPrintMem));
-  memset (vioValue,    0, sizeof(vioValue));
-  memset (vioValueXYZ, 0, sizeof(vioValueXYZ));
-  memset (vioAddrIPv4, 0, sizeof(vioAddrIPv4));
-  memset (vioAddrIPv6, 0, sizeof(vioAddrIPv6));
+  memset(vioPrintMem, 0, sizeof(vioPrintMem));
+  memset(vioValue,    0, sizeof(vioValue));
+  memset(vioValueXYZ, 0, sizeof(vioValueXYZ));
+  memset(vioAddrIPv4, 0, sizeof(vioAddrIPv4));
+  memset(vioAddrIPv6, 0, sizeof(vioAddrIPv6));
 
 #if !defined CMSIS_VOUT
   // Initialize LEDs pins
