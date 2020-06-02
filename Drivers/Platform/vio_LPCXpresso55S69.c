@@ -2,7 +2,7 @@
  * @file     vio_LPCXpresso55S69.c
  * @brief    Virtual I/O implementation for NXP LPCXpresso55S69 board
  * @version  V1.0.0
- * @date     28. May 2020
+ * @date     2. June 2020
  ******************************************************************************/
 /*
  * Copyright (c) 2020 Arm Limited (or its affiliates). All rights reserved.
@@ -30,8 +30,8 @@ Virtual Resource  | Variable       | Physical Resource on LPCXpresso55S69       
 :-----------------|:---------------|:-----------------------------------------------|
 vioBUTTON0        | vioSignalIn.0  | PIO1_9: Button USER (SW3)                      |
 vioLED0           | vioSignalOut.0 | PIO1_6: LED RED                                |
-vioLED1           | vioSignalOut.1 | PIO1_4: LED BLUE                               |
-vioLED2           | vioSignalOut.2 | PIO1_7: LED GREEN                              |
+vioLED1           | vioSignalOut.1 | PIO1_7: LED GREEN                              |
+vioLED2           | vioSignalOut.2 | PIO1_4: LED BLUE                               |
 */
 
 #include <stdio.h>
@@ -98,8 +98,8 @@ void vioInit (void) {
   CLOCK_EnableClock(kCLOCK_Iocon);
   CLOCK_EnableClock(kCLOCK_Gpio1);
   LED_RED_INIT  (LOGIC_LED_OFF);
-  LED_BLUE_INIT (LOGIC_LED_OFF);
   LED_GREEN_INIT(LOGIC_LED_OFF);
+  LED_BLUE_INIT (LOGIC_LED_OFF);
 #endif
 
 #if !defined CMSIS_VIN
@@ -163,16 +163,16 @@ void vioSetSignal (uint32_t mask, uint32_t signal) {
   }
   if ((mask & vioLED1) != 0U) {
     if ((signal & vioLED1) != 0U) {
-      LED_BLUE_ON();
+      LED_GREEN_ON();
     } else {
-      LED_BLUE_OFF();
+      LED_GREEN_OFF();
     }
   }
   if ((mask & vioLED2) != 0U) {
     if ((signal & vioLED2) != 0U) {
-      LED_GREEN_ON();
+      LED_BLUE_ON();
     } else {
-      LED_GREEN_OFF();
+      LED_BLUE_OFF();
     }
   }
 #endif
@@ -188,9 +188,12 @@ uint32_t vioGetSignal (uint32_t mask) {
 
 #if !defined CMSIS_VIN
   // Get input signals from buttons (only USER button)
-  vioSignalIn = 0U;
-  if (GPIO_PinRead(BOARD_SW3_GPIO, BOARD_SW3_GPIO_PORT, BOARD_SW3_GPIO_PIN) == 0U) {
-    vioSignalIn |= vioBUTTON0;
+  if ((mask & vioBUTTON0) != 0U) {
+    if (GPIO_PinRead(BOARD_SW3_GPIO, BOARD_SW3_GPIO_PORT, BOARD_SW3_GPIO_PIN) == 0U) {
+      vioSignalIn |=  vioBUTTON0;
+    } else {
+      vioSignalIn &= ~vioBUTTON0;
+    }
   }
 #endif
 

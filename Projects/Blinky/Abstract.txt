@@ -13,6 +13,6 @@ Example functionality:
 
  - Hardware Mapping:
             Virtual I/O      Board
-   LED      vioLED0          LED RED  (PIO1_6)
-   LED      vioLED1          LED BLUE (PIO1_4)
-   Button   vioBUTTON0       USER     (PIO1_9)
+   LED      vioLED0          LED RED   (PIO1_6)
+   LED      vioLED1          LED GREEN (PIO1_7)
+   Button   vioBUTTON0       USER      (PIO1_9)
