@@ -409,58 +409,57 @@ void BOARD_InitACCELPins(void); /* Function assigned for the Cortex-M33 (Core #0
  * Refer to the appropriate specific device data sheet for details.
  */
 #define PIO1_3_SLEW_FAST 0x01u
-/*!
- * @brief Select Digital mode.: Enable Digital mode. Digital input is enabled. */
-#define PIO1_5_DIGIMODE_DIGITAL 0x01u
-/*!
- * @brief Selects pin function.: Alternative connection 0. */
-#define PIO1_5_FUNC_ALT0 0x00u
-/*!
- * @brief
- * Driver slew rate.
- * : Fast-mode, output slew rate is faster.
- * Refer to the appropriate specific device data sheet for details.
- */
-#define PIO1_5_SLEW_FAST 0x01u
 
 /*! @name PIO1_2 (number 61), P17[9]/P23[4]/LSPI_HS_SCK
   @{ */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_SCK_PORT 1U /*!<@brief PORT device name: 1U */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_SCK_PIN 2U  /*!<@brief 1U pin index: 2 */
-                                                           /* @} */
+#define BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SCK_PORT 1U /*!<@brief PORT device name: 1U */
+#define BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SCK_PIN 2U  /*!<@brief 1U pin index: 2 */
+                                                            /* @} */
 
 /*! @name PIO1_3 (number 62), P17[11]/P23[5]/LSPI_HS_MISO
   @{ */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_MISO_PORT 1U /*!<@brief PORT device name: 1U */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_MISO_PIN 3U  /*!<@brief 1U pin index: 3 */
-                                                            /* @} */
+#define BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_MISO_PORT 1U /*!<@brief PORT device name: 1U */
+#define BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_MISO_PIN 3U  /*!<@brief 1U pin index: 3 */
+                                                             /* @} */
 
 /*! @name PIO0_26 (number 60), P17[13]/P23[6]/LSPI_HS_MOSI
   @{ */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_MOSI_PORT 0U /*!<@brief PORT device name: 0U */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_MOSI_PIN 26U /*!<@brief 0U pin index: 26 */
-                                                            /* @} */
+#define BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_MOSI_PORT 0U /*!<@brief PORT device name: 0U */
+#define BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_MOSI_PIN 26U /*!<@brief 0U pin index: 26 */
+                                                             /* @} */
 
 /*! @name PIO1_1 (number 59), P17[15]/P23[3]/LSPI_HS_SSEL1
   @{ */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_SSN_GPIO GPIO /*!<@brief GPIO device name: GPIO */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_SSN_PORT 1U   /*!<@brief PORT device name: 1U */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_SSN_PIN 1U    /*!<@brief 1U pin index: 1 */
-                                                             /* @} */
-
-/*! @name PIO1_5 (number 31), P17[17]/P24[1]/PIO1_5_GPIO_ARD
-  @{ */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_PIO1_5_GPIO GPIO /*!<@brief GPIO device name: GPIO */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_PIO1_5_PORT 1U   /*!<@brief PORT device name: 1U */
-#define BOARD_INITPINS_ARDUINO_SPI_ARDUINO_PIO1_5_PIN 5U    /*!<@brief 1U pin index: 5 */
-                                                            /* @} */
+#define BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_GPIO GPIO /*!<@brief GPIO device name: GPIO */
+#define BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_PORT 1U   /*!<@brief PORT device name: 1U */
+#define BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_PIN 1U    /*!<@brief 1U pin index: 1 */
+                                                              /* @} */
 
 /*!
  * @brief Configures pin routing and optionally pin electrical features for SPI on 
  * Arduino UNO R3 connectors.
  *
  */
-void BOARD_InitPins_Arduino_SPI(void); /* Function assigned for the Cortex-M33 (Core #0) */
+void BOARD_InitPins_Arduino_SPI8(void); /* Function assigned for the Cortex-M33 (Core #0) */
+
+#define PIO1_5_DIGIMODE_DIGITAL 0x01u /*!<@brief Select Digital mode.: Enable Digital mode. Digital input is enabled. */
+#define PIO1_5_FUNC_ALT0 0x00u        /*!<@brief Selects pin function.: Alternative connection 0. */
+
+/*! @name PIO1_5 (number 31), P17[17]/P24[1]/PIO1_5_GPIO_ARD
+  @{ */
+#define BOARD_INITPINS_ARDUINO_PIO1_5_ARDUINO_PIO1_5_GPIO GPIO /*!<@brief GPIO device name: GPIO */
+#define BOARD_INITPINS_ARDUINO_PIO1_5_ARDUINO_PIO1_5_PORT 1U   /*!<@brief PORT device name: 1U */
+#define BOARD_INITPINS_ARDUINO_PIO1_5_ARDUINO_PIO1_5_PIN 5U    /*!<@brief 1U pin index: 5 */
+                                                               /* @} */
+
+/*!
+ * @brief Configures pin routing and optionally pin electrical features for PIO1_5 pin on 
+ * Arduino UNO R3 connectors, used by 
+ * 
+ * Inventek ISM43362 WiFi Shield (DATARDY).
+ *
+ */
+void BOARD_InitPins_Arduino_PIO1_5(void); /* Function assigned for the Cortex-M33 (Core #0) */
 
 /*!
  * @brief Select Digital mode.: Enable Digital mode. Digital input is enabled. */
@@ -477,22 +476,22 @@ void BOARD_InitPins_Arduino_SPI(void); /* Function assigned for the Cortex-M33 (
 
 /*! @name PIO0_27 (number 27), P18[13]/P24[4]/FC2_USART_TXD_ARD
   @{ */
-#define BOARD_INITPINS_ARDUINO_USART_ARDUINO_USART_TX_PORT 0U /*!<@brief PORT device name: 0U */
-#define BOARD_INITPINS_ARDUINO_USART_ARDUINO_USART_TX_PIN 27U /*!<@brief 0U pin index: 27 */
-                                                              /* @} */
+#define BOARD_INITPINS_ARDUINO_USART2_ARDUINO_USART_TX_PORT 0U /*!<@brief PORT device name: 0U */
+#define BOARD_INITPINS_ARDUINO_USART2_ARDUINO_USART_TX_PIN 27U /*!<@brief 0U pin index: 27 */
+                                                               /* @} */
 
 /*! @name PIO1_24 (number 3), P18[15]/P18[10]/P24[3]/PLU_OUT6/GPIO/FC2_USART_RXD_ARD/SD1_D1
   @{ */
-#define BOARD_INITPINS_ARDUINO_USART_ARDUINO_USART_RX_PORT 1U /*!<@brief PORT device name: 1U */
-#define BOARD_INITPINS_ARDUINO_USART_ARDUINO_USART_RX_PIN 24U /*!<@brief 1U pin index: 24 */
-                                                              /* @} */
+#define BOARD_INITPINS_ARDUINO_USART2_ARDUINO_USART_RX_PORT 1U /*!<@brief PORT device name: 1U */
+#define BOARD_INITPINS_ARDUINO_USART2_ARDUINO_USART_RX_PIN 24U /*!<@brief 1U pin index: 24 */
+                                                               /* @} */
 
 /*!
  * @brief Configures pin routing and optionally pin electrical features for USART on 
  * Arduino UNO R3 connectors.
  *
  */
-void BOARD_InitPins_Arduino_USART(void); /* Function assigned for the Cortex-M33 (Core #0) */
+void BOARD_InitPins_Arduino_USART2(void); /* Function assigned for the Cortex-M33 (Core #0) */
 
 #if defined(__cplusplus)
 }

@@ -455,6 +455,7 @@ void BOARD_InitPins_Arduino_SPI8(void); /* Function assigned for the Cortex-M33 
 /*!
  * @brief Configures pin routing and optionally pin electrical features for PIO1_5 pin on 
  * Arduino UNO R3 connectors, used by 
+ * 
  * Inventek ISM43362 WiFi Shield (DATARDY).
  *
  */

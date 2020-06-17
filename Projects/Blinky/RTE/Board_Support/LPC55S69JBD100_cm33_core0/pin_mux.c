@@ -864,7 +864,7 @@ void BOARD_InitACCELPins(void)
 /* clang-format off */
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-BOARD_InitPins_Arduino_SPI:
+BOARD_InitPins_Arduino_SPI8:
 - options: {callFromInitBoot: 'false', coreID: cm33_core0, enableClock: 'true'}
 - pin_list:
   - {pin_num: '61', peripheral: FLEXCOMM8, signal: HS_SPI_SCK, pin_signal: PIO1_2/CTIMER0_MAT3/SCT_GPI6/HS_SPI_SCK/USB1_PORTPWRN/PLU_OUT5, slew_rate: fast}
@@ -873,20 +873,19 @@ BOARD_InitPins_Arduino_SPI:
     slew_rate: fast}
   - {pin_num: '59', peripheral: GPIO, signal: 'PIO1, 1', pin_signal: PIO1_1/FC3_RXD_SDA_MOSI_DATA/CT_INP3/SCT_GPI5/HS_SPI_SSEL1/USB1_OVERCURRENTN/PLU_OUT4, direction: OUTPUT,
     gpio_init_state: 'true', slew_rate: fast}
-  - {pin_num: '31', peripheral: GPIO, signal: 'PIO1, 5', pin_signal: PIO1_5/FC0_RXD_SDA_MOSI_DATA/SD0_D2/CTIMER2_MAT0/SCT_GPI0, slew_rate: fast}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */
 
 /* FUNCTION ************************************************************************************************************
  *
- * Function Name : BOARD_InitPins_Arduino_SPI
+ * Function Name : BOARD_InitPins_Arduino_SPI8
  * Description   : Configures pin routing and optionally pin electrical features for SPI on 
  * Arduino UNO R3 connectors.
  *
  * END ****************************************************************************************************************/
 /* Function assigned for the Cortex-M33 (Core #0) */
-void BOARD_InitPins_Arduino_SPI(void)
+void BOARD_InitPins_Arduino_SPI8(void)
 {
     /* Enables the clock for the I/O controller.: Enable Clock. */
     CLOCK_EnableClock(kCLOCK_Iocon);
@@ -899,7 +898,7 @@ void BOARD_InitPins_Arduino_SPI(void)
         .outputLogic = 1U
     };
     /* Initialize GPIO functionality on pin PIO1_1 (pin 59)  */
-    GPIO_PinInit(BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_SSN_GPIO, BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_SSN_PORT, BOARD_INITPINS_ARDUINO_SPI_ARDUINO_SPI_SSN_PIN, &ARDUINO_SPI_SSN_config);
+    GPIO_PinInit(BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_GPIO, BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_PORT, BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_PIN, &ARDUINO_SPI_SSN_config);
 
     IOCON->PIO[0][26] = ((IOCON->PIO[0][26] &
                           /* Mask bits to zero which are setting */
@@ -972,19 +971,41 @@ void BOARD_InitPins_Arduino_SPI(void)
                          * : Enable Digital mode.
                          * Digital input is enabled. */
                         | IOCON_PIO_DIGIMODE(PIO1_3_DIGIMODE_DIGITAL));
+}
+
+/* clang-format off */
+/*
+ * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
+BOARD_InitPins_Arduino_PIO1_5:
+- options: {callFromInitBoot: 'false', coreID: cm33_core0, enableClock: 'true'}
+- pin_list:
+  - {pin_num: '31', peripheral: GPIO, signal: 'PIO1, 5', pin_signal: PIO1_5/FC0_RXD_SDA_MOSI_DATA/SD0_D2/CTIMER2_MAT0/SCT_GPI0}
+ * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
+ */
+/* clang-format on */
+
+/* FUNCTION ************************************************************************************************************
+ *
+ * Function Name : BOARD_InitPins_Arduino_PIO1_5
+ * Description   : Configures pin routing and optionally pin electrical features for PIO1_5 pin on 
+ * Arduino UNO R3 connectors, used by 
+ * 
+ * Inventek ISM43362 WiFi Shield (DATARDY).
+ *
+ * END ****************************************************************************************************************/
+/* Function assigned for the Cortex-M33 (Core #0) */
+void BOARD_InitPins_Arduino_PIO1_5(void)
+{
+    /* Enables the clock for the I/O controller.: Enable Clock. */
+    CLOCK_EnableClock(kCLOCK_Iocon);
 
     IOCON->PIO[1][5] = ((IOCON->PIO[1][5] &
                          /* Mask bits to zero which are setting */
-                         (~(IOCON_PIO_FUNC_MASK | IOCON_PIO_SLEW_MASK | IOCON_PIO_DIGIMODE_MASK)))
+                         (~(IOCON_PIO_FUNC_MASK | IOCON_PIO_DIGIMODE_MASK)))
 
                         /* Selects pin function.
                          * : PORT15 (pin 31) is configured as PIO1_5. */
                         | IOCON_PIO_FUNC(PIO1_5_FUNC_ALT0)
-
-                        /* Driver slew rate.
-                         * : Fast-mode, output slew rate is faster.
-                         * Refer to the appropriate specific device data sheet for details. */
-                        | IOCON_PIO_SLEW(PIO1_5_SLEW_FAST)
 
                         /* Select Digital mode.
                          * : Enable Digital mode.
@@ -995,7 +1016,7 @@ void BOARD_InitPins_Arduino_SPI(void)
 /* clang-format off */
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-BOARD_InitPins_Arduino_USART:
+BOARD_InitPins_Arduino_USART2:
 - options: {callFromInitBoot: 'false', coreID: cm33_core0, enableClock: 'true'}
 - pin_list:
   - {pin_num: '27', peripheral: FLEXCOMM2, signal: TXD_SCL_MISO_WS, pin_signal: PIO0_27/FC2_TXD_SCL_MISO_WS/CTIMER3_MAT2/SCT0_OUT6/FC7_RXD_SDA_MOSI_DATA/PLU_OUT0/SECURE_GPIO0_27}
@@ -1006,13 +1027,13 @@ BOARD_InitPins_Arduino_USART:
 
 /* FUNCTION ************************************************************************************************************
  *
- * Function Name : BOARD_InitPins_Arduino_USART
+ * Function Name : BOARD_InitPins_Arduino_USART2
  * Description   : Configures pin routing and optionally pin electrical features for USART on 
  * Arduino UNO R3 connectors.
  *
  * END ****************************************************************************************************************/
 /* Function assigned for the Cortex-M33 (Core #0) */
-void BOARD_InitPins_Arduino_USART(void)
+void BOARD_InitPins_Arduino_USART2(void)
 {
     /* Enables the clock for the I/O controller.: Enable Clock. */
     CLOCK_EnableClock(kCLOCK_Iocon);

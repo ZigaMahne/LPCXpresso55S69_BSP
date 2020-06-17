@@ -192,7 +192,7 @@ void BOARD_BootClockPLL100M(void)
     const pll_setup_t pll0Setup = {
         .pllctrl = SYSCON_PLL0CTRL_CLKEN_MASK | SYSCON_PLL0CTRL_SELI(53U) | SYSCON_PLL0CTRL_SELP(26U),
         .pllndec = SYSCON_PLL0NDEC_NDIV(4U),
-        .pllpdec = SYSCON_PLL0PDEC_PDIV(4U),
+        .pllpdec = SYSCON_PLL0PDEC_PDIV(2U),
         .pllsscg = {0x0U,(SYSCON_PLL0SSCG1_MDIV_EXT(100U) | SYSCON_PLL0SSCG1_SEL_EXT_MASK)},
         .pllRate = 100000000U,
         .flags =  PLL_SETUPFLAG_WAITLOCK
@@ -266,7 +266,7 @@ void BOARD_BootClockPLL150M(void)
     const pll_setup_t pll0Setup = {
         .pllctrl = SYSCON_PLL0CTRL_CLKEN_MASK | SYSCON_PLL0CTRL_SELI(53U) | SYSCON_PLL0CTRL_SELP(31U),
         .pllndec = SYSCON_PLL0NDEC_NDIV(8U),
-        .pllpdec = SYSCON_PLL0PDEC_PDIV(2U),
+        .pllpdec = SYSCON_PLL0PDEC_PDIV(1U),
         .pllsscg = {0x0U,(SYSCON_PLL0SSCG1_MDIV_EXT(150U) | SYSCON_PLL0SSCG1_SEL_EXT_MASK)},
         .pllRate = 150000000U,
         .flags =  PLL_SETUPFLAG_WAITLOCK
