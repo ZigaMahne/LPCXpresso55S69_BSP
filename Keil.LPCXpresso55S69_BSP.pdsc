@@ -57,7 +57,7 @@
   </components>
 
   <examples>
-    <example name="Blinky" doc="Abstract.txt" folder="Projects/Blinky">
+    <example name="Blinky" doc="Abstract.md" folder="Projects/Blinky">
       <description>CMSIS-RTOS2 Blinky example with VIO</description>
       <board name="LPCXpresso55S69" vendor="NXP"/>
       <project>
