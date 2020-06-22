@@ -72,7 +72,7 @@
       </attributes>
     </example>
 
-    <example name="Platform" doc="Abstract.txt" folder="Projects/Platform">
+    <example name="Platform" doc="Abstract.md" folder="Projects/Platform">
       <description>CMSIS-RTOS2 Platform example with VIO</description>
       <board name="LPCXpresso55S69" vendor="NXP"/>
       <project>
