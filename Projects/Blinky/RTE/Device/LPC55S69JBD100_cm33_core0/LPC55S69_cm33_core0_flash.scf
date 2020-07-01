@@ -39,7 +39,7 @@
 #if (defined(__heap_size__))
   #define Heap_Size                    __heap_size__
 #else
-  #define Heap_Size                    0x0400
+  #define Heap_Size                    0x00010000
 #endif
 
 #define  m_interrupts_start            0x00000000
@@ -64,7 +64,7 @@
 #define  m_usb_sram_start              0x40100000
 #define  m_usb_sram_size               0x00004000
 
-#define m_data_noinit_size             0x00000800
+#define m_data_noinit_size             0x00000500
 
 LR_m_text m_interrupts_start m_interrupts_size+m_text_size {   ; load region size_region
 
@@ -92,5 +92,19 @@ LR_m_text m_interrupts_start m_interrupts_size+m_text_size {   ; load region siz
   ARM_LIB_HEAP +0 EMPTY Heap_Size {    ; Heap region growing up
   }
   ARM_LIB_STACK m_data_start+m_data_size EMPTY -Stack_Size { ; Stack region growing down
+  }
+
+  RW_m_usb_bdt m_usb_sram_start UNINIT usb_bdt_size {
+    * (*m_usb_bdt)
+  }
+
+  RW_m_usb_ram (m_usb_sram_start + usb_bdt_size) UNINIT (m_usb_sram_size - usb_bdt_size) {
+    * (*m_usb_global)
+  }
+}
+
+LR_CORE1_IMAGE m_core1_image_start {
+  CORE1_REGION m_core1_image_start m_core1_image_size {
+    * (.m0code)
   }
 }

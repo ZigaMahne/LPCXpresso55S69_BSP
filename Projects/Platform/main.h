@@ -23,6 +23,6 @@
 #ifndef MAIN_H__
 #define MAIN_H__
 
-extern void app_main (void *arg);
+extern void app_initialize (void);
 
 #endif

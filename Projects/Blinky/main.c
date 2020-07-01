@@ -24,16 +24,19 @@
 
 #include "RTE_Components.h"
 #include  CMSIS_device_header
-#include "RTE_Device.h"
+#include "cmsis_os2.h"
 
+#include "RTE_Device.h"
 #include "peripherals.h"
 #include "pin_mux.h"
 #include "board.h"
 #include "fsl_debug_console.h"
 
-#include "cmsis_os2.h"
 #ifdef    RTE_VIO_BOARD
 #include "cmsis_vio.h"
+#endif
+#ifdef    RTE_Compiler_EventRecorder
+#include "EventRecorder.h"
 #endif
 
 /*---------------------------------------------------------------------------
@@ -53,8 +56,12 @@ int main (void) {
   vioInit();                            // Initialize Virtual I/O
 #endif
 
+#ifdef RTE_Compiler_EventRecorder
+  EventRecorderInitialize (EventRecordAll, 1U); // Initialize and start Event Recorder
+#endif
+
   osKernelInitialize();                 // Initialize CMSIS-RTOS2
-  osThreadNew(app_main, NULL, NULL);    // Create application main thread
+  app_initialize();                     // Initialize application
   osKernelStart();                      // Start thread execution
 
   for (;;) {}

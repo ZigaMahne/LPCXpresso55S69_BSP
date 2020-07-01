@@ -375,7 +375,7 @@
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
             <LinkerInputFile></LinkerInputFile>
-            <DisabledWarnings></DisabledWarnings>
+            <DisabledWarnings>6314</DisabledWarnings>
           </LDads>
         </TargetArmAds>
       </TargetOption>
@@ -419,9 +419,9 @@
           <GroupName>Documentation</GroupName>
           <Files>
             <File>
-              <FileName>Abstract.md</FileName>
+              <FileName>README.md</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Abstract.md</FilePath>
+              <FilePath>.\README.md</FilePath>
             </File>
           </Files>
         </Group>

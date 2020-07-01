@@ -573,7 +573,7 @@
                </pins>
             </function>
             <function name="BOARD_InitPins_Arduino_PIO1_5">
-               <description>Configures pin routing and optionally pin electrical features for PIO1_5 pin on &amp;lt;br/&amp;gt;Arduino UNO R3 connectors, used by &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Inventek ISM43362 WiFi Shield (DATARDY).</description>
+               <description>Configures pin routing and optionally pin electrical features for PIO1_5 pin on &amp;lt;br/&amp;gt;Arduino UNO R3 connectors, used by &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Inventek ISM43362 WiFi Shield (DATARDY).</description>
                <options>
                   <callFromInitBoot>false</callFromInitBoot>
                   <coreID>cm33_core0</coreID>

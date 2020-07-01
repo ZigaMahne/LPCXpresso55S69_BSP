@@ -48,7 +48,7 @@
 //   <i> Defines the combined global dynamic memory size.
 //   <i> Default: 32768
 #ifndef OS_DYNAMIC_MEM_SIZE
-#define OS_DYNAMIC_MEM_SIZE         32768
+#define OS_DYNAMIC_MEM_SIZE         24000
 #endif
  
 //   <o>Kernel Tick Frequency [Hz] <1-1000000>
@@ -347,13 +347,13 @@
 //   <e>Global Initialization
 //   <i> Initialize Event Recorder during 'osKernelInitialize'.
 #ifndef OS_EVR_INIT
-#define OS_EVR_INIT                 1
+#define OS_EVR_INIT                 0
 #endif
  
 //     <q>Start recording
 //     <i> Start event recording after initialization.
 #ifndef OS_EVR_START
-#define OS_EVR_START                1
+#define OS_EVR_START                0
 #endif
  
 //     <h>Global Event Filter Setup

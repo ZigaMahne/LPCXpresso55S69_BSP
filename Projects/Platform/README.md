@@ -1,4 +1,4 @@
-Platform Project
+Platform project
 ================
 
 The 'Platform' project configures the hardware of the evaluation board
@@ -27,6 +27,6 @@ This implementation contains the following configured interface drivers:
 
 The CMSIS-RTOS2 is based on RTX5 with the following configuration settings:
 
-   - Global Dynamic Memory size: 32768 bytes
+   - Global Dynamic Memory size: 24000 bytes
 
    - Default Thread Stack size: 3072 bytes
