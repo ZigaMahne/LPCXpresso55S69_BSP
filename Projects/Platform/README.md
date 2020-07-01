@@ -1,32 +1,39 @@
 Platform project
 ================
 
-The 'Platform' project configures the hardware of the evaluation board
+The **Platform** project configures the hardware of the evaluation board
 and is a CMSIS-RTOS2 based software template that can be further expanded.
 
-This implementation contains the following configured interface drivers:
+RTX5 Real-Time Operating System
+-------------------------------
+The [RTX5 RTOS](https://arm-software.github.io/CMSIS_5/RTOS2/html/rtx5_impl.html)
+implements the resource management. It is configured with the following settings:
 
-  - CMSIS-Driver USART2 routed to Arduino UNO R3 connector
-    - TX:    J18 pin 13
-    - Rx:    J18 pin 15
+- Global Dynamic Memory size: 24000 bytes
+- Default Thread Stack size:  3072 bytes
 
-  - CMSIS-Driver SPI8 (LSPI_HS) routed to Arduino UNO R3 connector
-    - SCK:   J17 pin 9
-    - MISO:  J17 pin 11
-    - MOSI:  J17 pin 13
-    - SSEL1: J17 pin 15
+NXP LPCXpresso55S69 Target Board
+--------------------------------
+The Board layer contains the following configured interface drivers:
 
-  - CMSIS-Driver VIO with the following board hardware mapping
-    - vioBUTTON0: PIO1_9 - Button USER (SW3)
-    - vioLED0:    PIO1_6 - LED RED
-    - vioLED1:    PIO1_7 - LED GREEN
-    - vioLED2:    PIO1_4 - LED BLUE
+**CMSIS-Driver USART2** routed to Arduino UNO R3 connector:
+ - TX:         P18 connector - pin D1  (FC2_USART_TXD_ARD)
+ - RX:         P18 connector - pin D0  (PLU_OUT6/GPIO/FC2_USART_RXD_ARD)
 
-  - GPIO mapping
-    - PIO1_5_GPIO_ARD (J17 pin 17) input
+**CMSIS-Driver SPI8** routed to Arduino UNO R3 connector:
+ - SCK:        P17 connector - pin D13 (LSPI_HS_SCK)
+ - MISO:       P17 connector - pin D12 (LSPI_HS_MISO)
+ - MOSI:       P17 connector - pin D11 (LSPI_HS_MOSI)
 
-The CMSIS-RTOS2 is based on RTX5 with the following configuration settings:
+**GPIO** pins routed to Arduino UNO R3 connector:
+ - output:     P17 connector - pin D10 (LSPI_HS_SSEL1)
+ - input:      P17 connector - pin D9  (PIO1_5_GPIO_ARD)
 
-   - Global Dynamic Memory size: 24000 bytes
+**CMSIS-Driver VIO** with the following board hardware mapping:
+ - vioBUTTON0: Button USER (PIO1_9)
+ - vioLED0:    LED RED     (PIO1_6)
+ - vioLED1:    LED GREEN   (PIO1_7)
+ - vioLED2:    LED BLUE    (PIO1_4)
 
-   - Default Thread Stack size: 3072 bytes
+The board configuration can be modified using [MCUxpresso](https://www.keil.com/nxp)
+and is stored in the file `LPCXpresso55S69.mex`.

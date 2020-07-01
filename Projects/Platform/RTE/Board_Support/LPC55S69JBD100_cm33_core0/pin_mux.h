@@ -457,6 +457,7 @@ void BOARD_InitPins_Arduino_SPI8(void); /* Function assigned for the Cortex-M33 
  * Arduino UNO R3 connectors, used by 
  * 
  * 
+ * 
  * Inventek ISM43362 WiFi Shield (DATARDY).
  *
  */

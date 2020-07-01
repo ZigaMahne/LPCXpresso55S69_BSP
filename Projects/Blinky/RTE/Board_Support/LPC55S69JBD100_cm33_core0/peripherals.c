@@ -6,7 +6,7 @@
 /* clang-format off */
 /* TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Peripherals v8.0
+product: Peripherals v7.0
 processor: LPC55S69
 package_id: LPC55S69JBD100
 mcu_data: ksdk2_0
@@ -20,6 +20,20 @@ functionalGroups:
 - name: BOARD_InitPeripherals_cm33_core1
   UUID: e2041cd4-ebb6-45a5-807f-e0c2dc047d48
   selectedCore: cm33_core1
+ * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS **********/
+
+/* TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
+component:
+- type: 'system'
+- type_id: 'system_54b53072540eeeb8f8e9343e71f28176'
+- global_system_definitions: []
+ * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS **********/
+
+/* TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
+component:
+- type: 'msg'
+- type_id: 'msg_6e2baaf3b97dbeef01c0043275f9a0e7'
+- global_messages: []
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS **********/
 /* clang-format on */
 

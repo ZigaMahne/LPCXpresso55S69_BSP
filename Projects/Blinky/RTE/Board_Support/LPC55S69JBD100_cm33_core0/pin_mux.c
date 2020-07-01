@@ -7,7 +7,7 @@
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Pins v8.0
+product: Pins v7.0
 processor: LPC55S69
 package_id: LPC55S69JBD100
 mcu_data: ksdk2_0
@@ -989,6 +989,8 @@ BOARD_InitPins_Arduino_PIO1_5:
  * Function Name : BOARD_InitPins_Arduino_PIO1_5
  * Description   : Configures pin routing and optionally pin electrical features for PIO1_5 pin on 
  * Arduino UNO R3 connectors, used by 
+ * 
+ * 
  * 
  * Inventek ISM43362 WiFi Shield (DATARDY).
  *

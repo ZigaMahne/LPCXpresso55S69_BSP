@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding= "UTF-8" ?>
-<configuration name="LPCXpresso55S69" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.8 http://mcuxpresso.nxp.com/XSD/mex_configuration_1.8.xsd" uuid="6c6bcd04-a24b-4f8f-aa35-5b756538b2f6" version="1.8" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<configuration name="LPCXpresso55S69" version="1.7" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.7 http://mcuxpresso.nxp.com/XSD/mex_configuration_1.7.xsd" uuid="6c6bcd04-a24b-4f8f-aa35-5b756538b2f6" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
    <common>
       <processor>LPC55S69</processor>
       <package>LPC55S69JBD100</package>
@@ -18,7 +18,7 @@
       <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
    </preferences>
    <tools>
-      <pins name="Pins" version="8.0" enabled="true" update_project_code="true">
+      <pins name="Pins" version="7.0" enabled="true" update_project_code="true">
          <generated_project_files>
             <file path="RTE/Board_Support/LPC55S69JBD100_cm33_core0/pin_mux.c" update_enabled="true"/>
             <file path="RTE/Board_Support/LPC55S69JBD100_cm33_core0/pin_mux.h" update_enabled="true"/>
@@ -573,7 +573,7 @@
                </pins>
             </function>
             <function name="BOARD_InitPins_Arduino_PIO1_5">
-               <description>Configures pin routing and optionally pin electrical features for PIO1_5 pin on &amp;lt;br/&amp;gt;Arduino UNO R3 connectors, used by &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Inventek ISM43362 WiFi Shield (DATARDY).</description>
+               <description>Configures pin routing and optionally pin electrical features for PIO1_5 pin on &amp;lt;br/&amp;gt;Arduino UNO R3 connectors, used by &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Inventek ISM43362 WiFi Shield (DATARDY).</description>
                <options>
                   <callFromInitBoot>false</callFromInitBoot>
                   <coreID>cm33_core0</coreID>
@@ -869,7 +869,7 @@
          </dcdx_profile>
          <dcdx_configurations/>
       </dcdx>
-      <periphs name="Peripherals" version="8.0" enabled="true" update_project_code="true">
+      <periphs name="Peripherals" version="7.0" enabled="true" update_project_code="true">
          <generated_project_files>
             <file path="RTE/Board_Support/LPC55S69JBD100_cm33_core0/peripherals.c" update_enabled="true"/>
             <file path="RTE/Board_Support/LPC55S69JBD100_cm33_core0/peripherals.h" update_enabled="true"/>
@@ -931,7 +931,7 @@
             <component name="system" uuid="c541d045-35a7-407a-8954-1e5d90d61b00" type_id="system_54b53072540eeeb8f8e9343e71f28176">
                <config_set_global name="global_system_definitions"/>
             </component>
-            <component name="msg" uuid="c884e022-af94-4036-846f-b4fc63a062c0" type_id="msg_6e2baaf3b97dbeef01c0043275f9a0e7">
+            <component name="msg" uuid="81b3104f-6267-4a3a-9cfa-feeee090732c" type_id="msg_6e2baaf3b97dbeef01c0043275f9a0e7">
                <config_set_global name="global_messages"/>
             </component>
          </components>
@@ -1195,14 +1195,14 @@
             </pins_masks>
          </ahb>
          <sau enabled="true" all_non_secure="false" generate_code_for_disabled_regions="false">
-            <region start="0" size="268435456" security="ns" enabled="true" index="0"/>
-            <region start="536870912" size="3758096384" security="ns" enabled="true" index="1"/>
-            <region start="0" size="32" security="ns" enabled="false" index="2"/>
-            <region start="0" size="32" security="ns" enabled="false" index="3"/>
-            <region start="0" size="32" security="ns" enabled="false" index="4"/>
-            <region start="0" size="32" security="ns" enabled="false" index="5"/>
-            <region start="0" size="32" security="ns" enabled="false" index="6"/>
-            <region start="0" size="32" security="ns" enabled="false" index="7"/>
+            <region start="0" size="268435456" security="ns" index="0" enabled="true"/>
+            <region start="536870912" size="3758096384" security="ns" index="1" enabled="true"/>
+            <region start="0" size="32" security="ns" index="2" enabled="false"/>
+            <region start="0" size="32" security="ns" index="3" enabled="false"/>
+            <region start="0" size="32" security="ns" index="4" enabled="false"/>
+            <region start="0" size="32" security="ns" index="5" enabled="false"/>
+            <region start="0" size="32" security="ns" index="6" enabled="false"/>
+            <region start="0" size="32" security="ns" index="7" enabled="false"/>
          </sau>
          <global_options>
             <option id="AIRCR_PRIS" value="no"/>
