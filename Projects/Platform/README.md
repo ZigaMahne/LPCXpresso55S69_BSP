@@ -16,18 +16,18 @@ NXP LPCXpresso55S69 Target Board
 --------------------------------
 The Board layer contains the following configured interface drivers:
 
-**CMSIS-Driver USART2** routed to Arduino UNO R3 connector:
- - TX:         P18 connector - pin D1  (FC2_USART_TXD_ARD)
- - RX:         P18 connector - pin D0  (PLU_OUT6/GPIO/FC2_USART_RXD_ARD)
+**CMSIS-Driver USART2** routed to Arduino UNO R3 connector (P18):
+ - TX:         pin D1      (FC2_USART_TXD_ARD)
+ - RX:         pin D0      (PLU_OUT6/GPIO/FC2_USART_RXD_ARD)
 
-**CMSIS-Driver SPI8** routed to Arduino UNO R3 connector:
- - SCK:        P17 connector - pin D13 (LSPI_HS_SCK)
- - MISO:       P17 connector - pin D12 (LSPI_HS_MISO)
- - MOSI:       P17 connector - pin D11 (LSPI_HS_MOSI)
+**CMSIS-Driver SPI8** routed to Arduino UNO R3 connector (P17):
+ - SCK:        pin D13     (LSPI_HS_SCK)
+ - MISO:       pin D12     (LSPI_HS_MISO)
+ - MOSI:       pin D11     (LSPI_HS_MOSI)
 
-**GPIO** pins routed to Arduino UNO R3 connector:
- - output:     P17 connector - pin D10 (LSPI_HS_SSEL1)
- - input:      P17 connector - pin D9  (PIO1_5_GPIO_ARD)
+**GPIO** pins routed to Arduino UNO R3 connector (P17):
+ - output:     pin D10     (LSPI_HS_SSEL1)
+ - input:      pin D9      (PIO1_5_GPIO_ARD)
 
 **CMSIS-Driver VIO** with the following board hardware mapping:
  - vioBUTTON0: Button USER (PIO1_9)
