@@ -30,7 +30,6 @@
 #include "peripherals.h"
 #include "pin_mux.h"
 #include "board.h"
-#include "fsl_debug_console.h"
 
 #ifdef    RTE_VIO_BOARD
 #include "cmsis_vio.h"

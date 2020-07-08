@@ -337,7 +337,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>SDK_DEBUGCONSOLE_UART</Define>
+              <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -657,11 +657,7 @@
       <component Cclass="Device" Cgroup="SDK Utilities" Csub="debug_console" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_component.serial_manager_AND_driver.common">
         <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
         <targetInfos>
-          <targetInfo name="LPCXpresso55S69">
-            <c>
-              <Define>__MCUXPRESSO</Define>
-            </c>
-          </targetInfo>
+          <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Utilities" Csub="serial_manager" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__component.lists_AND_driver.common__AND__component.serial_manager_swo_OR_component.serial_manager_uart_OR_component.serial_manager_usb_cdc_virtual_">
