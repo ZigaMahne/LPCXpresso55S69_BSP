@@ -963,7 +963,7 @@
       <LayAsnItem>
         <LayAsnType>2</LayAsnType>
         <LayAsnName>.\Board_IO\fsl_spi_cmsis.c</LayAsnName>
-        <LayAsnLayerName>RTOS</LayAsnLayerName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>2</LayAsnType>
