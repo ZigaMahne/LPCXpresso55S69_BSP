@@ -1002,6 +1002,21 @@
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>1</LayAsnType>
+        <LayAsnName>Keil.ARM Compiler::Compiler:I/O:STDERR</LayAsnName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>1</LayAsnType>
+        <LayAsnName>Keil.ARM Compiler::Compiler:I/O:STDIN</LayAsnName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>1</LayAsnType>
+        <LayAsnName>Keil.ARM Compiler::Compiler:I/O:STDOUT</LayAsnName>
+        <LayAsnLayerName>Board</LayAsnLayerName>
+      </LayAsnItem>
+      <LayAsnItem>
+        <LayAsnType>1</LayAsnType>
         <LayAsnName>NXP::CMSIS Driver:SPI:flexcomm_spi_cmsis</LayAsnName>
         <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
