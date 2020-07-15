@@ -14,10 +14,6 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- *      Name:    main.c
- *      Purpose: Main file for NXP LPC55S69 device
- *
  *---------------------------------------------------------------------------*/
 
 #include "main.h"
@@ -38,12 +34,18 @@
 #include "EventRecorder.h"
 #endif
 
-/*---------------------------------------------------------------------------
- * Main function
- *---------------------------------------------------------------------------*/
+// Callbacks for SPI8 Driver
+uint32_t SPI8_GetFreq      (void) { return CLOCK_GetHsLspiClkFreq(); }
+void     SPI8_InitPins     (void) { /* Done in BOARD_InitBootPins function */ }
+void     SPI8_DeinitPins   (void) { /* Not implemented */ }
+
+// Callbacks for USART2 Driver
+uint32_t USART2_GetFreq    (void) { return CLOCK_GetFlexCommClkFreq(2U); }
+void     USART2_InitPins   (void) { /* Done in BOARD_InitBootPins function */ }
+void     USART2_DeinitPins (void) { /* Not implemented */ }
+
 int main (void) {
 
-  // System initialization
   BOARD_InitBootPeripherals();
   BOARD_InitBootPins();
   BOARD_InitBootClocks();
@@ -67,15 +69,3 @@ int main (void) {
 
   for (;;) {}
 }
-
-/*---------------------------------------------------------------------------
- * NXP CMSIS drivers callback implementations
- *---------------------------------------------------------------------------*/
-
-uint32_t SPI8_GetFreq      (void) { return CLOCK_GetHsLspiClkFreq(); }
-void     SPI8_InitPins     (void) { /* Done in BOARD_InitBootPins function */ }
-void     SPI8_DeinitPins   (void) { /* Not implemented */ }
-
-uint32_t USART2_GetFreq    (void) { return CLOCK_GetFlexCommClkFreq(2U); }
-void     USART2_InitPins   (void) { /* Done in BOARD_InitBootPins function */ }
-void     USART2_DeinitPins (void) { /* Not implemented */ }

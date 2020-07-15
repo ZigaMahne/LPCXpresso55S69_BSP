@@ -10,7 +10,7 @@ The [RTX5 RTOS](https://arm-software.github.io/CMSIS_5/RTOS2/html/rtx5_impl.html
 implements the resource management. It is configured with the following settings:
 
 - Global Dynamic Memory size: 24000 bytes
-- Default Thread Stack size: 3072 bytes
+- Default Thread Stack size:  3072 bytes
 
 NXP LPCXpresso55S69 Target Board
 --------------------------------
@@ -37,5 +37,6 @@ The Board layer contains the following configured interface drivers:
 
 **STDIO** routed to Virtual COM port (DAP-Link, baudrate = 115200)
 
-The board configuration can be modified using [MCUxpresso](https://www.keil.com/nxp)
+The board configuration can be modified using 
+[MCUxpresso](https://www.keil.com/nxp) 
 and is stored in the file `LPCXpresso55S69.mex`.

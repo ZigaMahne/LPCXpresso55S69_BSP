@@ -14,10 +14,6 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- *      Name:    main.c
- *      Purpose: Main file for NXP LPC55S69 device
- *
  *---------------------------------------------------------------------------*/
 
 #include "main.h"
@@ -30,7 +26,6 @@
 #include "peripherals.h"
 #include "pin_mux.h"
 #include "board.h"
-#include "fsl_debug_console.h"
 
 #ifdef    RTE_VIO_BOARD
 #include "cmsis_vio.h"
@@ -39,12 +34,8 @@
 #include "EventRecorder.h"
 #endif
 
-/*---------------------------------------------------------------------------
- * Main function
- *---------------------------------------------------------------------------*/
 int main (void) {
 
-  // System initialization
   BOARD_InitBootPeripherals();
   BOARD_InitBootPins();
   BOARD_InitBootClocks();
