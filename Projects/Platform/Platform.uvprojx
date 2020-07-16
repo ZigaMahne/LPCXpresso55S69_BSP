@@ -192,7 +192,7 @@
             <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
-            <nSecure>0</nSecure>
+            <nSecure>2</nSecure>
             <RoSelD>3</RoSelD>
             <RwSelD>4</RwSelD>
             <CodeSel>0</CodeSel>
@@ -354,7 +354,7 @@
             <useXO>0</useXO>
             <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
-              <MiscControls>-x assembler-with-cpp</MiscControls>
+              <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
@@ -545,7 +545,7 @@
         </targetInfos>
       </component>
       <component Capiversion="0.1.0" Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="LPCXpresso55S69" Cvendor="Keil" Cversion="1.0.0" condition="LPCXpresso55S69 VIO">
-        <package name="LPCXpresso55S69_BSP" schemaVersion="1.6.0" url="https://github.com/MDK-Packs/Pack/raw/master/LPCXpresso55S69_BSP/" vendor="Keil" version="1.0.0-dev1"/>
+        <package name="LPCXpresso55S69_BSP" schemaVersion="1.6.0" url="https://github.com/MDK-Packs/Pack/raw/master/LPCXpresso55S69_BSP/" vendor="Keil" version="1.0.0-dev3"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
@@ -685,7 +685,11 @@
       <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__CMSIS_Include_core_cm33__AND__armclang_OR_iar_">
         <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
         <targetInfos>
-          <targetInfo name="LPCXpresso55S69"/>
+          <targetInfo name="LPCXpresso55S69">
+            <asm>
+              <MiscControls>-x assembler-with-cpp</MiscControls>
+            </asm>
+          </targetInfo>
         </targetInfos>
       </component>
     </components>
@@ -877,7 +881,7 @@
         <LayUrl>https://www.keil.com</LayUrl>
         <LayKeys>Layer, CMSIS RTOS</LayKeys>
         <LayCat>RTOS</LayCat>
-        <LayLic>Apache 2.0</LayLic>
+        <LayLic>BSD 3-Clause, Apache 2.0</LayLic>
         <LayTarg>0</LayTarg>
         <LayPrjMark>1</LayPrjMark>
       </Layer>
@@ -892,10 +896,10 @@
       </Layer>
       <Layer>
         <LayName>Board</LayName>
-        <LayDesc>Board Layer for NXP LPCxpresso55S69</LayDesc>
-        <LayKeys>Board, NXP, LPCxpresso55S69, RTOS</LayKeys>
-        <LayCat>RTOS</LayCat>
-        <LayLic>Apache 2.0</LayLic>
+        <LayDesc>Board layer for LPCXpresso55S69</LayDesc>
+        <LayKeys>Board, LPCXpresso55S69</LayKeys>
+        <LayCat>Board</LayCat>
+        <LayLic>BSD 3-Clause, Apache 2.0</LayLic>
         <LayTarg>1</LayTarg>
         <LayPrjMark>0</LayPrjMark>
       </Layer>

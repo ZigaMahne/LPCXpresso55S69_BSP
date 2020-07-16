@@ -573,7 +573,7 @@
                </pins>
             </function>
             <function name="BOARD_InitPins_Arduino_PIO1_5">
-               <description>Configures pin routing and optionally pin electrical features for PIO1_5 pin on &amp;lt;br/&amp;gt;Arduino UNO R3 connectors, used by &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Inventek ISM43362 WiFi Shield (DATARDY).</description>
+               <description>Configures pin routing and optionally pin electrical features for PIO1_5 pin on &amp;lt;br/&amp;gt;Arduino UNO R3 connectors, used by &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Inventek ISM43362 WiFi Shield (DATARDY).</description>
                <options>
                   <callFromInitBoot>true</callFromInitBoot>
                   <coreID>cm33_core0</coreID>
@@ -843,15 +843,24 @@
                   </dependency>
                </dependencies>
                <clock_sources>
+                  <clock_source id="ANACTRL.fro_hf.outFreq" value="96 MHz" locked="false" enabled="false"/>
                   <clock_source id="SYSCON.XTAL32M.outFreq" value="16 MHz" locked="false" enabled="true"/>
                </clock_sources>
                <clock_outputs>
+                  <clock_output id="FXCOM0_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FXCOM2_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
+                  <clock_output id="HSLSPI_clock.outFreq" value="96 MHz" locked="false" accuracy=""/>
                   <clock_output id="System_clock.outFreq" value="150 MHz" locked="false" accuracy=""/>
                </clock_outputs>
                <clock_settings>
                   <setting id="PLL0_Mode" value="Normal" locked="false"/>
+                  <setting id="ANALOG_CONTROL_FRO192M_CTRL_ENDI_FRO_96M_CFG" value="Enable" locked="false"/>
                   <setting id="ENABLE_CLKIN_ENA" value="Enabled" locked="false"/>
                   <setting id="ENABLE_SYSTEM_CLK_OUT" value="Enabled" locked="false"/>
+                  <setting id="SYSCON.FCCLKSEL0.sel" value="ANACTRL.fro_12m_clk" locked="false"/>
+                  <setting id="SYSCON.FCCLKSEL2.sel" value="ANACTRL.fro_12m_clk" locked="false"/>
+                  <setting id="SYSCON.FROHFDIV.scale" value="1" locked="true"/>
+                  <setting id="SYSCON.HSLSPICLKSEL.sel" value="SYSCON.FROHFDIV" locked="false"/>
                   <setting id="SYSCON.MAINCLKSELB.sel" value="SYSCON.PLL0_BYPASS" locked="false"/>
                   <setting id="SYSCON.PLL0CLKSEL.sel" value="SYSCON.CLK_IN_EN" locked="false"/>
                   <setting id="SYSCON.PLL0M_MULT.scale" value="150" locked="true"/>
@@ -931,7 +940,7 @@
             <component name="system" uuid="c541d045-35a7-407a-8954-1e5d90d61b00" type_id="system_54b53072540eeeb8f8e9343e71f28176">
                <config_set_global name="global_system_definitions"/>
             </component>
-            <component name="msg" uuid="bbcc5284-56bc-4222-9e7e-9ff7350d1d46" type_id="msg_6e2baaf3b97dbeef01c0043275f9a0e7">
+            <component name="msg" uuid="5b8dc3f2-e400-4e0b-bf1d-c35992e12516" type_id="msg_6e2baaf3b97dbeef01c0043275f9a0e7">
                <config_set_global name="global_messages"/>
             </component>
          </components>
