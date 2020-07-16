@@ -1021,11 +1021,6 @@
       </LayAsnItem>
       <LayAsnItem>
         <LayAsnType>1</LayAsnType>
-        <LayAsnName>NXP::CMSIS Driver:SPI:flexcomm_spi_cmsis</LayAsnName>
-        <LayAsnLayerName>Board</LayAsnLayerName>
-      </LayAsnItem>
-      <LayAsnItem>
-        <LayAsnType>1</LayAsnType>
         <LayAsnName>NXP::CMSIS Driver:USART:flexcomm_usart_cmsis</LayAsnName>
         <LayAsnLayerName>Board</LayAsnLayerName>
       </LayAsnItem>
