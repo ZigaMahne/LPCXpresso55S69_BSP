@@ -7,17 +7,12 @@
   <repository type="git">https://github.com/MDK-Packs/LPCXpresso55S69_BSP.git</repository>
 
   <releases>
-    <release version="1.0.0-dev3">
-      Add corrected SPI CMSIS driver.
-    </release>
-    <release version="1.0.0-dev2">
-      Update STDIO retarget.
-    </release>
-    <release version="1.0.0-dev1">
-      Update to sync with CB_Lab4Layer.
-    </release>
-    <release version="1.0.0-dev0">
-      Initial development release.
+    <release version="1.0.0" date="2020-07-17">
+      Drivers:
+      - CMSIS-VIO driver
+      Example projects:
+      - CMSIS-RTOS2 Blinky (verify the basic tool setup)
+      - CMSIS-RTOS2 Platform (configure the board hardware)
     </release>
   </releases>
 
