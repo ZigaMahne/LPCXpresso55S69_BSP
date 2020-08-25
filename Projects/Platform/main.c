@@ -53,6 +53,9 @@ int main (void) {
 
   SystemCoreClockUpdate();
 
+  NVIC_SetPriority(FLEXCOMM8_IRQn, 1U);
+  NVIC_SetPriority(FLEXCOMM2_IRQn, 1U);
+
 #ifdef RTE_VIO_BOARD
   vioInit();                            // Initialize Virtual I/O
 #endif
