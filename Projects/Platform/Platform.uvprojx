@@ -529,7 +529,7 @@
         </targetInfos>
       </component>
       <component Capiversion="0.1.0" Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="LPCXpresso55S69" Cvendor="Keil" Cversion="1.0.0" condition="LPCXpresso55S69 VIO">
-        <package name="LPCXpresso55S69_BSP" schemaVersion="1.6.0" url="https://github.com/MDK-Packs/Pack/raw/master/LPCXpresso55S69_BSP/" vendor="Keil" version="1.0.0-dev3"/>
+        <package name="LPCXpresso55S69_BSP" schemaVersion="1.6.0" url="https://github.com/MDK-Packs/Pack/raw/master/LPCXpresso55S69_BSP/" vendor="Keil" version="1.0.1-dev0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
@@ -675,11 +675,7 @@
       <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.1.0" condition="device.LPC55S69_AND_CMSIS_Include_core_cm33_AND__armclang_OR_iar_">
         <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
-          <targetInfo name="LPCXpresso55S69">
-            <asm>
-              <MiscControls>-x assembler-with-cpp</MiscControls>
-            </asm>
-          </targetInfo>
+          <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
     </components>

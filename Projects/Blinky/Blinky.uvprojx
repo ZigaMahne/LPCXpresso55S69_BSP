@@ -479,109 +479,109 @@
         </targetInfos>
       </component>
       <component Capiversion="0.1.0" Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="LPCXpresso55S69" Cvendor="Keil" Cversion="1.0.0" condition="LPCXpresso55S69 VIO">
-        <package name="LPCXpresso55S69_BSP" schemaVersion="1.6.0" url="https://github.com/MDK-Packs/Pack/raw/master/LPCXpresso55S69_BSP/" vendor="Keil" version="1.0.0-dev3"/>
+        <package name="LPCXpresso55S69_BSP" schemaVersion="1.6.0" url="https://github.com/MDK-Packs/Pack/raw/master/LPCXpresso55S69_BSP/" vendor="Keil" version="1.0.1-dev0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
-      <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="lpcxpresso55s69" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_component.serial_manager_AND_component.usart_adapter_AND_device.LPC55S69_startup_AND_driver.clock_AND_driver.flexcomm_i2c_AND_driver.flexcomm_spi_AND_driver.flexcomm_usart_AND_driver.lpc_gpio_AND_driver.lpc_iocon_AND_driver.power_AND_driver.reset_AND_utility.debug_console">
-        <package license="Licenses.txt" name="LPCXpresso55S69_BSP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Board Support" Cgroup="SDK Project Template" Csub="project_template" Cvariant="lpcxpresso55s69" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_component.serial_manager_AND_component.usart_adapter_AND_device.LPC55S69_startup_AND_driver.clock_AND_driver.flexcomm_i2c_AND_driver.flexcomm_usart_AND_driver.lpc_gpio_AND_driver.lpc_iocon_AND_driver.power_AND_driver.reset_AND_utility.debug_console">
+        <package license="Licenses.txt" name="LPCXpresso55S69_BSP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="SDK Drivers" Csub="clock" Cvendor="NXP" Cversion="2.1.0" condition="device.LPC55S69_AND_driver.common_AND_driver.power">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="clock" Cvendor="NXP" Cversion="2.3.3" condition="device.LPC55S69_AND_driver.common_AND_driver.power">
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="SDK Drivers" Csub="common" Cvendor="NXP" Cversion="2.2.2" condition="device.LPC55S69_AND_device.LPC55S69_CMSIS_AND_driver.clock_AND_driver.reset">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="common" Cvendor="NXP" Cversion="2.2.4" condition="device.LPC55S69_AND_device.LPC55S69_CMSIS_AND_driver.clock_AND_driver.reset">
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="SDK Drivers" Csub="dma" Cvendor="NXP" Cversion="2.4.0" condition="device.LPC55S69_AND_driver.common">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="dma" Cvendor="NXP" Cversion="2.4.1" condition="device.LPC55S69_AND_driver.common">
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Drivers" Csub="flexcomm" Cvendor="NXP" Cversion="2.0.2" condition="device.LPC55S69_AND_driver.common">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="SDK Drivers" Csub="gpio" Cvendor="NXP" Cversion="2.1.5" condition="device.LPC55S69_AND_driver.common">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="gpio" Cvendor="NXP" Cversion="2.1.6" condition="device.LPC55S69_AND_driver.common">
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="SDK Drivers" Csub="i2c" Cvendor="NXP" Cversion="2.0.6" condition="device.LPC55S69_AND_driver.common_AND_driver.flexcomm">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="i2c" Cvendor="NXP" Cversion="2.0.8" condition="device.LPC55S69_AND_driver.common_AND_driver.flexcomm">
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Drivers" Csub="iocon" Cvendor="NXP" Cversion="2.1.1" condition="device.LPC55S69_AND_driver.common">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Drivers" Csub="lists" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_driver.common">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Drivers" Csub="power" Cvendor="NXP" Cversion="2.0.0" condition="device.LPC55S69_AND_driver.common">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Drivers" Csub="reset" Cvendor="NXP" Cversion="2.0.1" condition="device.LPC55S69_AND_driver.common">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="SDK Drivers" Csub="spi" Cvendor="NXP" Cversion="2.1.0" condition="device.LPC55S69_AND_driver.common_AND_driver.flexcomm">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="spi" Cvendor="NXP" Cversion="2.1.1" condition="device.LPC55S69_AND_driver.common_AND_driver.flexcomm">
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="SDK Drivers" Csub="usart" Cvendor="NXP" Cversion="2.1.1" condition="device.LPC55S69_AND_driver.flexcomm">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Device" Cgroup="SDK Drivers" Csub="usart" Cvendor="NXP" Cversion="2.2.0" condition="device.LPC55S69_AND_driver.flexcomm">
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Drivers" Csub="usart_adapter" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_driver.common_AND_driver.flexcomm_AND_driver.flexcomm_usart">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Project Template" Csub="RTE_Device" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_driver.lpc_dma">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Utilities" Csub="assert" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_utility.debug_console">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="SDK Utilities" Csub="debug_console" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_component.serial_manager_AND_driver.common">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69">
             <c>
@@ -590,14 +590,14 @@
           </targetInfo>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="SDK Utilities" Csub="serial_manager" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__component.lists_AND_driver.common__AND__component.serial_manager_swo_OR_component.serial_manager_uart_OR_component.serial_manager_usb_cdc_virtual_">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Device" Cgroup="SDK Utilities" Csub="serial_manager" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__component.serial_manager_swo_OR_component.serial_manager_uart__AND_component.lists_AND_driver.common">
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
-      <component Cclass="Device" Cgroup="SDK Utilities" Csub="serial_manager_uart" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_driver.flexcomm_usart">
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
+      <component Cclass="Device" Cgroup="SDK Utilities" Csub="serial_manager_uart" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND_component.usart_adapter_AND_driver.flexcomm_usart">
+        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
@@ -605,11 +605,7 @@
       <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.1.0" condition="device.LPC55S69_AND_CMSIS_Include_core_cm33_AND__armclang_OR_iar_">
         <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.3.0"/>
         <targetInfos>
-          <targetInfo name="LPCXpresso55S69">
-            <asm>
-              <MiscControls>-x assembler-with-cpp</MiscControls>
-            </asm>
-          </targetInfo>
+          <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </component>
     </components>
@@ -702,18 +698,6 @@
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
       </file>
-      <file attr="config" category="header" condition="core_id.cm33_core0_AND_core_type.cm33" name="LPC55S69_cm33_core0.h" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\LPC55S69JBD100_cm33_core0\LPC55S69_cm33_core0.h</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__CMSIS_Include_core_cm33__AND__armclang_OR_iar_"/>
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
-        <targetInfos/>
-      </file>
-      <file attr="config" category="header" condition="core_id.cm33_core0_AND_core_type.cm33" name="LPC55S69_cm33_core0_features.h" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\LPC55S69JBD100_cm33_core0\LPC55S69_cm33_core0_features.h</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__CMSIS_Include_core_cm33__AND__armclang_OR_iar_"/>
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
-        <targetInfos/>
-      </file>
       <file attr="config" category="linkerScript" condition="core_id.cm33_core0_AND_core_type.cm33_AND_mdk" name="arm\LPC55S69_cm33_core0_flash.scf" version="1.1.0">
         <instance index="0">RTE\Device\LPC55S69JBD100_cm33_core0\LPC55S69_cm33_core0_flash.scf</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.1.0" condition="device.LPC55S69_AND_CMSIS_Include_core_cm33_AND__armclang_OR_iar_"/>
@@ -753,30 +737,6 @@
         <targetInfos>
           <targetInfo name="LPCXpresso55S69"/>
         </targetInfos>
-      </file>
-      <file attr="config" category="header" condition="_core_id.cm33_core0_OR_core_id.cm33_core1__AND_core_type.cm33" name="fsl_device_registers.h" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\LPC55S69JBD100_cm33_core0\fsl_device_registers.h</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__CMSIS_Include_core_cm33__AND__armclang_OR_iar_"/>
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
-        <targetInfos/>
-      </file>
-      <file attr="config" category="sourceAsm" condition="core_id.cm33_core0_AND_core_type.cm33_AND_mdk" name="arm\startup_LPC55S69_cm33_core0.s" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\LPC55S69JBD100_cm33_core0\startup_LPC55S69_cm33_core0.s</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__CMSIS_Include_core_cm33__AND__armclang_OR_iar_"/>
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
-        <targetInfos/>
-      </file>
-      <file attr="config" category="sourceC" condition="core_id.cm33_core0_AND_core_type.cm33" name="system_LPC55S69_cm33_core0.c" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\LPC55S69JBD100_cm33_core0\system_LPC55S69_cm33_core0.c</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__CMSIS_Include_core_cm33__AND__armclang_OR_iar_"/>
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
-        <targetInfos/>
-      </file>
-      <file attr="config" category="header" condition="core_id.cm33_core0_AND_core_type.cm33" name="system_LPC55S69_cm33_core0.h" version="1.0.0">
-        <instance index="0" removed="1">RTE\Device\LPC55S69JBD100_cm33_core0\system_LPC55S69_cm33_core0.h</instance>
-        <component Cclass="Device" Cgroup="Startup" Cvendor="NXP" Cversion="1.0.0" condition="device.LPC55S69_AND__CMSIS_Include_core_cm33__AND__armclang_OR_iar_"/>
-        <package license="Licenses.txt" name="LPC55S69_DFP" schemaVersion="1.4" url="http://mcuxpresso.nxp.com/cmsis_pack/repo/" vendor="NXP" version="12.1.1"/>
-        <targetInfos/>
       </file>
     </files>
   </RTE>
