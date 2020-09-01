@@ -103,11 +103,16 @@ void vioInit (void) {
 #endif
 
 #if !defined CMSIS_VIN
-  // Initialize buttons pins (only USER button)
+  // Initialize buttons pins
   CLOCK_EnableClock(kCLOCK_Iocon);
+  CLOCK_EnableClock(kCLOCK_Gpio0);
   CLOCK_EnableClock(kCLOCK_Gpio1);
   IOCON_PinMuxSet(IOCON, BOARD_SW3_GPIO_PORT, BOARD_SW3_GPIO_PIN, IOCON_DIGITAL_EN);
   GPIO_PinInit(BOARD_SW3_GPIO, BOARD_SW3_GPIO_PORT, BOARD_SW3_GPIO_PIN, &(gpio_pin_config_t){kGPIO_DigitalInput, 0U});
+  IOCON_PinMuxSet(IOCON, BOARD_SW1_GPIO_PORT, BOARD_SW1_GPIO_PIN, IOCON_DIGITAL_EN);
+  GPIO_PinInit(BOARD_SW1_GPIO, BOARD_SW1_GPIO_PORT, BOARD_SW1_GPIO_PIN, &(gpio_pin_config_t){kGPIO_DigitalInput, 0U});
+  IOCON_PinMuxSet(IOCON, BOARD_SW2_GPIO_PORT, BOARD_SW2_GPIO_PIN, IOCON_DIGITAL_EN);
+  GPIO_PinInit(BOARD_SW2_GPIO, BOARD_SW2_GPIO_PORT, BOARD_SW2_GPIO_PIN, &(gpio_pin_config_t){kGPIO_DigitalInput, 0U});
 #endif
 }
 
@@ -187,12 +192,29 @@ uint32_t vioGetSignal (uint32_t mask) {
 #endif
 
 #if !defined CMSIS_VIN
-  // Get input signals from buttons (only USER button)
+  // Get input signals from buttons
+  // USER button (S3)
   if ((mask & vioBUTTON0) != 0U) {
     if (GPIO_PinRead(BOARD_SW3_GPIO, BOARD_SW3_GPIO_PORT, BOARD_SW3_GPIO_PIN) == 0U) {
       vioSignalIn |=  vioBUTTON0;
     } else {
       vioSignalIn &= ~vioBUTTON0;
+    }
+  }
+  // USER button (S1)
+  if ((mask & vioBUTTON1) != 0U) {
+    if (GPIO_PinRead(BOARD_SW1_GPIO, BOARD_SW1_GPIO_PORT, BOARD_SW1_GPIO_PIN) == 0U) {
+      vioSignalIn |=  vioBUTTON1;
+    } else {
+      vioSignalIn &= ~vioBUTTON1;
+    }
+  }
+  // USER button (S2)
+  if ((mask & vioBUTTON2) != 0U) {
+    if (GPIO_PinRead(BOARD_SW2_GPIO, BOARD_SW2_GPIO_PORT, BOARD_SW2_GPIO_PIN) == 0U) {
+      vioSignalIn |=  vioBUTTON2;
+    } else {
+      vioSignalIn &= ~vioBUTTON2;
     }
   }
 #endif

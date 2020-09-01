@@ -13,17 +13,6 @@ package_id: LPC55S69JBD100
 mcu_data: ksdk2_0
 processor_version: 7.0.1
 board: LPCXpresso55S69
-pin_labels:
-- {pin_num: '60', pin_signal: PIO0_26/FC2_RXD_SDA_MOSI_DATA/CLKOUT/CT_INP14/SCT0_OUT5/USB0_IDVALUE/FC0_SCK/HS_SPI_MOSI/SECURE_GPIO0_26, label: 'P17[13]/P23[6]/LSPI_HS_MOSI',
-  identifier: ARDUINO_SPI_MOSI}
-- {pin_num: '27', pin_signal: PIO0_27/FC2_TXD_SCL_MISO_WS/CTIMER3_MAT2/SCT0_OUT6/FC7_RXD_SDA_MOSI_DATA/PLU_OUT0/SECURE_GPIO0_27, label: 'P18[13]/P24[4]/FC2_USART_TXD_ARD',
-  identifier: ARDUINO_USART_TX}
-- {pin_num: '59', pin_signal: PIO1_1/FC3_RXD_SDA_MOSI_DATA/CT_INP3/SCT_GPI5/HS_SPI_SSEL1/USB1_OVERCURRENTN/PLU_OUT4, label: 'P17[15]/P23[3]/LSPI_HS_SSEL1', identifier: ARDUINO_SPI_SSN}
-- {pin_num: '61', pin_signal: PIO1_2/CTIMER0_MAT3/SCT_GPI6/HS_SPI_SCK/USB1_PORTPWRN/PLU_OUT5, label: 'P17[9]/P23[4]/LSPI_HS_SCK', identifier: ARDUINO_SPI_SCK}
-- {pin_num: '62', pin_signal: PIO1_3/SCT0_OUT4/HS_SPI_MISO/USB0_PORTPWRN/PLU_OUT6, label: 'P17[11]/P23[5]/LSPI_HS_MISO', identifier: ARDUINO_SPI_MISO}
-- {pin_num: '31', pin_signal: PIO1_5/FC0_RXD_SDA_MOSI_DATA/SD0_D2/CTIMER2_MAT0/SCT_GPI0, label: 'P17[17]/P24[1]/PIO1_5_GPIO_ARD', identifier: ARDUINO_PIO1_5}
-- {pin_num: '3', pin_signal: PIO1_24/FC2_RXD_SDA_MOSI_DATA/SCT0_OUT1/SD1_D1/FC3_SSEL3/PLU_OUT6, label: 'P18[15]/P18[10]/P24[3]/PLU_OUT6/GPIO/FC2_USART_RXD_ARD/SD1_D1',
-  identifier: ARDUINO_USART_RX}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */
@@ -42,11 +31,9 @@ pin_labels:
 void BOARD_InitBootPins(void)
 {
     BOARD_InitDEBUG_UARTPins();
-    BOARD_InitUSBPins();
     BOARD_InitLEDsPins();
     BOARD_InitBUTTONsPins();
     BOARD_InitPins_Core0();
-    BOARD_InitACCELPins();
 }
 
 /* clang-format off */
@@ -234,7 +221,7 @@ void BOARD_InitSWD_DEBUGPins(void)
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 BOARD_InitUSBPins:
-- options: {callFromInitBoot: 'true', coreID: cm33_core0, enableClock: 'true'}
+- options: {callFromInitBoot: 'false', coreID: cm33_core0, enableClock: 'true'}
 - pin_list:
   - {pin_num: '97', peripheral: USBFSH, signal: USB_DP, pin_signal: USB0_DP}
   - {pin_num: '98', peripheral: USBFSH, signal: USB_DM, pin_signal: USB0_DM}
@@ -779,7 +766,7 @@ void BOARD_InitI2SPins(void)
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 BOARD_InitACCELPins:
-- options: {callFromInitBoot: 'true', coreID: cm33_core0, enableClock: 'true'}
+- options: {callFromInitBoot: 'false', coreID: cm33_core0, enableClock: 'true'}
 - pin_list:
   - {pin_num: '30', peripheral: FLEXCOMM4, signal: RXD_SDA_MOSI_DATA, pin_signal: PIO1_21/FC7_CTS_SDA_SSEL0/CTIMER3_MAT2/FC4_RXD_SDA_MOSI_DATA/PLU_OUT3, mode: pullUp,
     slew_rate: standard, invert: disabled, open_drain: disabled}
@@ -859,213 +846,6 @@ void BOARD_InitACCELPins(void)
                                   IOCON_PIO_OPENDRAIN_DI);
     /* PORT1 PIN21 (coords: 30) is configured as FC4_RXD_SDA_MOSI_DATA */
     IOCON_PinMuxSet(IOCON, BOARD_INITACCELPINS_FC4_I2C_SDA_PORT, BOARD_INITACCELPINS_FC4_I2C_SDA_PIN, FC4_I2C_SDA);
-}
-
-/* clang-format off */
-/*
- * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-BOARD_InitPins_Arduino_SPI8:
-- options: {callFromInitBoot: 'false', coreID: cm33_core0, enableClock: 'true'}
-- pin_list:
-  - {pin_num: '61', peripheral: FLEXCOMM8, signal: HS_SPI_SCK, pin_signal: PIO1_2/CTIMER0_MAT3/SCT_GPI6/HS_SPI_SCK/USB1_PORTPWRN/PLU_OUT5, slew_rate: fast}
-  - {pin_num: '62', peripheral: FLEXCOMM8, signal: HS_SPI_MISO, pin_signal: PIO1_3/SCT0_OUT4/HS_SPI_MISO/USB0_PORTPWRN/PLU_OUT6, slew_rate: fast}
-  - {pin_num: '60', peripheral: FLEXCOMM8, signal: HS_SPI_MOSI, pin_signal: PIO0_26/FC2_RXD_SDA_MOSI_DATA/CLKOUT/CT_INP14/SCT0_OUT5/USB0_IDVALUE/FC0_SCK/HS_SPI_MOSI/SECURE_GPIO0_26,
-    slew_rate: fast}
-  - {pin_num: '59', peripheral: GPIO, signal: 'PIO1, 1', pin_signal: PIO1_1/FC3_RXD_SDA_MOSI_DATA/CT_INP3/SCT_GPI5/HS_SPI_SSEL1/USB1_OVERCURRENTN/PLU_OUT4, direction: OUTPUT,
-    gpio_init_state: 'true', slew_rate: fast}
- * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
- */
-/* clang-format on */
-
-/* FUNCTION ************************************************************************************************************
- *
- * Function Name : BOARD_InitPins_Arduino_SPI8
- * Description   : Configures pin routing and optionally pin electrical features for SPI on 
- * Arduino UNO R3 connectors.
- *
- * END ****************************************************************************************************************/
-/* Function assigned for the Cortex-M33 (Core #0) */
-void BOARD_InitPins_Arduino_SPI8(void)
-{
-    /* Enables the clock for the I/O controller.: Enable Clock. */
-    CLOCK_EnableClock(kCLOCK_Iocon);
-
-    /* Enables the clock for the GPIO1 module */
-    CLOCK_EnableClock(kCLOCK_Gpio1);
-
-    gpio_pin_config_t ARDUINO_SPI_SSN_config = {
-        .pinDirection = kGPIO_DigitalOutput,
-        .outputLogic = 1U
-    };
-    /* Initialize GPIO functionality on pin PIO1_1 (pin 59)  */
-    GPIO_PinInit(BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_GPIO, BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_PORT, BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_PIN, &ARDUINO_SPI_SSN_config);
-
-    IOCON->PIO[0][26] = ((IOCON->PIO[0][26] &
-                          /* Mask bits to zero which are setting */
-                          (~(IOCON_PIO_FUNC_MASK | IOCON_PIO_SLEW_MASK | IOCON_PIO_DIGIMODE_MASK)))
-
-                         /* Selects pin function.
-                          * : PORT026 (pin 60) is configured as HS_SPI_MOSI. */
-                         | IOCON_PIO_FUNC(0x09u)
-
-                         /* Driver slew rate.
-                          * : Fast-mode, output slew rate is faster.
-                          * Refer to the appropriate specific device data sheet for details. */
-                         | IOCON_PIO_SLEW(PIO0_26_SLEW_FAST)
-
-                         /* Select Digital mode.
-                          * : Enable Digital mode.
-                          * Digital input is enabled. */
-                         | IOCON_PIO_DIGIMODE(PIO0_26_DIGIMODE_DIGITAL));
-
-    IOCON->PIO[1][1] = ((IOCON->PIO[1][1] &
-                         /* Mask bits to zero which are setting */
-                         (~(IOCON_PIO_FUNC_MASK | IOCON_PIO_SLEW_MASK | IOCON_PIO_DIGIMODE_MASK)))
-
-                        /* Selects pin function.
-                         * : PORT11 (pin 59) is configured as PIO1_1. */
-                        | IOCON_PIO_FUNC(PIO1_1_FUNC_ALT0)
-
-                        /* Driver slew rate.
-                         * : Fast-mode, output slew rate is faster.
-                         * Refer to the appropriate specific device data sheet for details. */
-                        | IOCON_PIO_SLEW(PIO1_1_SLEW_FAST)
-
-                        /* Select Digital mode.
-                         * : Enable Digital mode.
-                         * Digital input is enabled. */
-                        | IOCON_PIO_DIGIMODE(PIO1_1_DIGIMODE_DIGITAL));
-
-    IOCON->PIO[1][2] = ((IOCON->PIO[1][2] &
-                         /* Mask bits to zero which are setting */
-                         (~(IOCON_PIO_FUNC_MASK | IOCON_PIO_SLEW_MASK | IOCON_PIO_DIGIMODE_MASK)))
-
-                        /* Selects pin function.
-                         * : PORT12 (pin 61) is configured as HS_SPI_SCK. */
-                        | IOCON_PIO_FUNC(PIO1_2_FUNC_ALT6)
-
-                        /* Driver slew rate.
-                         * : Fast-mode, output slew rate is faster.
-                         * Refer to the appropriate specific device data sheet for details. */
-                        | IOCON_PIO_SLEW(PIO1_2_SLEW_FAST)
-
-                        /* Select Digital mode.
-                         * : Enable Digital mode.
-                         * Digital input is enabled. */
-                        | IOCON_PIO_DIGIMODE(PIO1_2_DIGIMODE_DIGITAL));
-
-    IOCON->PIO[1][3] = ((IOCON->PIO[1][3] &
-                         /* Mask bits to zero which are setting */
-                         (~(IOCON_PIO_FUNC_MASK | IOCON_PIO_SLEW_MASK | IOCON_PIO_DIGIMODE_MASK)))
-
-                        /* Selects pin function.
-                         * : PORT13 (pin 62) is configured as HS_SPI_MISO. */
-                        | IOCON_PIO_FUNC(PIO1_3_FUNC_ALT6)
-
-                        /* Driver slew rate.
-                         * : Fast-mode, output slew rate is faster.
-                         * Refer to the appropriate specific device data sheet for details. */
-                        | IOCON_PIO_SLEW(PIO1_3_SLEW_FAST)
-
-                        /* Select Digital mode.
-                         * : Enable Digital mode.
-                         * Digital input is enabled. */
-                        | IOCON_PIO_DIGIMODE(PIO1_3_DIGIMODE_DIGITAL));
-}
-
-/* clang-format off */
-/*
- * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-BOARD_InitPins_Arduino_PIO1_5:
-- options: {callFromInitBoot: 'false', coreID: cm33_core0, enableClock: 'true'}
-- pin_list:
-  - {pin_num: '31', peripheral: GPIO, signal: 'PIO1, 5', pin_signal: PIO1_5/FC0_RXD_SDA_MOSI_DATA/SD0_D2/CTIMER2_MAT0/SCT_GPI0}
- * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
- */
-/* clang-format on */
-
-/* FUNCTION ************************************************************************************************************
- *
- * Function Name : BOARD_InitPins_Arduino_PIO1_5
- * Description   : Configures pin routing and optionally pin electrical features for PIO1_5 pin on 
- * Arduino UNO R3 connectors, used by 
- * 
- * 
- * 
- * 
- * Inventek ISM43362 WiFi Shield (DATARDY).
- *
- * END ****************************************************************************************************************/
-/* Function assigned for the Cortex-M33 (Core #0) */
-void BOARD_InitPins_Arduino_PIO1_5(void)
-{
-    /* Enables the clock for the I/O controller.: Enable Clock. */
-    CLOCK_EnableClock(kCLOCK_Iocon);
-
-    IOCON->PIO[1][5] = ((IOCON->PIO[1][5] &
-                         /* Mask bits to zero which are setting */
-                         (~(IOCON_PIO_FUNC_MASK | IOCON_PIO_DIGIMODE_MASK)))
-
-                        /* Selects pin function.
-                         * : PORT15 (pin 31) is configured as PIO1_5. */
-                        | IOCON_PIO_FUNC(PIO1_5_FUNC_ALT0)
-
-                        /* Select Digital mode.
-                         * : Enable Digital mode.
-                         * Digital input is enabled. */
-                        | IOCON_PIO_DIGIMODE(PIO1_5_DIGIMODE_DIGITAL));
-}
-
-/* clang-format off */
-/*
- * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
-BOARD_InitPins_Arduino_USART2:
-- options: {callFromInitBoot: 'false', coreID: cm33_core0, enableClock: 'true'}
-- pin_list:
-  - {pin_num: '27', peripheral: FLEXCOMM2, signal: TXD_SCL_MISO_WS, pin_signal: PIO0_27/FC2_TXD_SCL_MISO_WS/CTIMER3_MAT2/SCT0_OUT6/FC7_RXD_SDA_MOSI_DATA/PLU_OUT0/SECURE_GPIO0_27}
-  - {pin_num: '3', peripheral: FLEXCOMM2, signal: RXD_SDA_MOSI_DATA, pin_signal: PIO1_24/FC2_RXD_SDA_MOSI_DATA/SCT0_OUT1/SD1_D1/FC3_SSEL3/PLU_OUT6}
- * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
- */
-/* clang-format on */
-
-/* FUNCTION ************************************************************************************************************
- *
- * Function Name : BOARD_InitPins_Arduino_USART2
- * Description   : Configures pin routing and optionally pin electrical features for USART on 
- * Arduino UNO R3 connectors.
- *
- * END ****************************************************************************************************************/
-/* Function assigned for the Cortex-M33 (Core #0) */
-void BOARD_InitPins_Arduino_USART2(void)
-{
-    /* Enables the clock for the I/O controller.: Enable Clock. */
-    CLOCK_EnableClock(kCLOCK_Iocon);
-
-    IOCON->PIO[0][27] = ((IOCON->PIO[0][27] &
-                          /* Mask bits to zero which are setting */
-                          (~(IOCON_PIO_FUNC_MASK | IOCON_PIO_DIGIMODE_MASK)))
-
-                         /* Selects pin function.
-                          * : PORT027 (pin 27) is configured as FC2_TXD_SCL_MISO_WS. */
-                         | IOCON_PIO_FUNC(PIO0_27_FUNC_ALT1)
-
-                         /* Select Digital mode.
-                          * : Enable Digital mode.
-                          * Digital input is enabled. */
-                         | IOCON_PIO_DIGIMODE(PIO0_27_DIGIMODE_DIGITAL));
-
-    IOCON->PIO[1][24] = ((IOCON->PIO[1][24] &
-                          /* Mask bits to zero which are setting */
-                          (~(IOCON_PIO_FUNC_MASK | IOCON_PIO_DIGIMODE_MASK)))
-
-                         /* Selects pin function.
-                          * : PORT124 (pin 3) is configured as FC2_RXD_SDA_MOSI_DATA. */
-                         | IOCON_PIO_FUNC(PIO1_24_FUNC_ALT1)
-
-                         /* Select Digital mode.
-                          * : Enable Digital mode.
-                          * Digital input is enabled. */
-                         | IOCON_PIO_DIGIMODE(PIO1_24_DIGIMODE_DIGITAL));
 }
 /***********************************************************************************************************************
  * EOF

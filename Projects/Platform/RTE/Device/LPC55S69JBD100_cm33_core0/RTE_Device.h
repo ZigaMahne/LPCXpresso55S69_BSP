@@ -196,7 +196,7 @@ in the application for enabling according instance. */
 #define RTE_SPI7_DMA_RX_CH       18
 #define RTE_SPI7_DMA_RX_DMA_BASE DMA0
 
-#define RTE_SPI8_SSEL_NUM        kSPI_Ssel1
+#define RTE_SPI8_SSEL_NUM        kSPI_Ssel0
 #define RTE_SPI8_DMA_TX_CH       3
 #define RTE_SPI8_DMA_TX_DMA_BASE DMA1
 #define RTE_SPI8_DMA_RX_CH       2

@@ -25,15 +25,6 @@
          </generated_project_files>
          <pins_profile>
             <processor_version>7.0.1</processor_version>
-            <pin_labels>
-               <pin_label pin_num="60" pin_signal="PIO0_26/FC2_RXD_SDA_MOSI_DATA/CLKOUT/CT_INP14/SCT0_OUT5/USB0_IDVALUE/FC0_SCK/HS_SPI_MOSI/SECURE_GPIO0_26" label="P17[13]/P23[6]/LSPI_HS_MOSI" identifier="ARDUINO_SPI_MOSI"/>
-               <pin_label pin_num="27" pin_signal="PIO0_27/FC2_TXD_SCL_MISO_WS/CTIMER3_MAT2/SCT0_OUT6/FC7_RXD_SDA_MOSI_DATA/PLU_OUT0/SECURE_GPIO0_27" label="P18[13]/P24[4]/FC2_USART_TXD_ARD" identifier="ARDUINO_USART_TX"/>
-               <pin_label pin_num="59" pin_signal="PIO1_1/FC3_RXD_SDA_MOSI_DATA/CT_INP3/SCT_GPI5/HS_SPI_SSEL1/USB1_OVERCURRENTN/PLU_OUT4" label="P17[15]/P23[3]/LSPI_HS_SSEL1" identifier="ARDUINO_SPI_SSN"/>
-               <pin_label pin_num="61" pin_signal="PIO1_2/CTIMER0_MAT3/SCT_GPI6/HS_SPI_SCK/USB1_PORTPWRN/PLU_OUT5" label="P17[9]/P23[4]/LSPI_HS_SCK" identifier="ARDUINO_SPI_SCK"/>
-               <pin_label pin_num="62" pin_signal="PIO1_3/SCT0_OUT4/HS_SPI_MISO/USB0_PORTPWRN/PLU_OUT6" label="P17[11]/P23[5]/LSPI_HS_MISO" identifier="ARDUINO_SPI_MISO"/>
-               <pin_label pin_num="31" pin_signal="PIO1_5/FC0_RXD_SDA_MOSI_DATA/SD0_D2/CTIMER2_MAT0/SCT_GPI0" label="P17[17]/P24[1]/PIO1_5_GPIO_ARD" identifier="ARDUINO_PIO1_5"/>
-               <pin_label pin_num="3" pin_signal="PIO1_24/FC2_RXD_SDA_MOSI_DATA/SCT0_OUT1/SD1_D1/FC3_SSEL3/PLU_OUT6" label="P18[15]/P18[10]/P24[3]/PLU_OUT6/GPIO/FC2_USART_RXD_ARD/SD1_D1" identifier="ARDUINO_USART_RX"/>
-            </pin_labels>
          </pins_profile>
          <functions_list>
             <function name="BOARD_InitDEBUG_UARTPins">
@@ -137,7 +128,7 @@
             <function name="BOARD_InitUSBPins">
                <description>Configures pin routing and optionally pin electrical features.</description>
                <options>
-                  <callFromInitBoot>true</callFromInitBoot>
+                  <callFromInitBoot>false</callFromInitBoot>
                   <coreID>cm33_core0</coreID>
                   <enableClock>true</enableClock>
                </options>
@@ -468,7 +459,7 @@
             <function name="BOARD_InitACCELPins">
                <description>Configures pin routing and optionally pin electrical features.</description>
                <options>
-                  <callFromInitBoot>true</callFromInitBoot>
+                  <callFromInitBoot>false</callFromInitBoot>
                   <coreID>cm33_core0</coreID>
                   <enableClock>true</enableClock>
                </options>
@@ -521,97 +512,6 @@
                         <pin_feature name="asw" value="disabled"/>
                      </pin_features>
                   </pin>
-               </pins>
-            </function>
-            <function name="BOARD_InitPins_Arduino_SPI8">
-               <description>Configures pin routing and optionally pin electrical features for SPI on &amp;lt;br/&amp;gt;Arduino UNO R3 connectors.</description>
-               <options>
-                  <callFromInitBoot>false</callFromInitBoot>
-                  <coreID>cm33_core0</coreID>
-                  <enableClock>true</enableClock>
-               </options>
-               <dependencies>
-                  <dependency resourceType="Peripheral" resourceId="FLEXCOMM8" description="Peripheral FLEXCOMM8 is not initialized" problem_level="1" source="Pins:BOARD_InitPins_Arduino_SPI8">
-                     <feature name="initialized" evaluation="equal">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPins_Arduino_SPI8">
-                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.lpc_gpio" description="Pins initialization requires the LPC_GPIO Driver in the project." problem_level="2" source="Pins:BOARD_InitPins_Arduino_SPI8">
-                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-               </dependencies>
-               <pins>
-                  <pin peripheral="FLEXCOMM8" signal="HS_SPI_SCK" pin_num="61" pin_signal="PIO1_2/CTIMER0_MAT3/SCT_GPI6/HS_SPI_SCK/USB1_PORTPWRN/PLU_OUT5">
-                     <pin_features>
-                        <pin_feature name="slew_rate" value="fast"/>
-                     </pin_features>
-                  </pin>
-                  <pin peripheral="FLEXCOMM8" signal="HS_SPI_MISO" pin_num="62" pin_signal="PIO1_3/SCT0_OUT4/HS_SPI_MISO/USB0_PORTPWRN/PLU_OUT6">
-                     <pin_features>
-                        <pin_feature name="slew_rate" value="fast"/>
-                     </pin_features>
-                  </pin>
-                  <pin peripheral="FLEXCOMM8" signal="HS_SPI_MOSI" pin_num="60" pin_signal="PIO0_26/FC2_RXD_SDA_MOSI_DATA/CLKOUT/CT_INP14/SCT0_OUT5/USB0_IDVALUE/FC0_SCK/HS_SPI_MOSI/SECURE_GPIO0_26">
-                     <pin_features>
-                        <pin_feature name="slew_rate" value="fast"/>
-                     </pin_features>
-                  </pin>
-                  <pin peripheral="GPIO" signal="PIO1, 1" pin_num="59" pin_signal="PIO1_1/FC3_RXD_SDA_MOSI_DATA/CT_INP3/SCT_GPI5/HS_SPI_SSEL1/USB1_OVERCURRENTN/PLU_OUT4">
-                     <pin_features>
-                        <pin_feature name="direction" value="OUTPUT"/>
-                        <pin_feature name="gpio_init_state" value="true"/>
-                        <pin_feature name="slew_rate" value="fast"/>
-                     </pin_features>
-                  </pin>
-               </pins>
-            </function>
-            <function name="BOARD_InitPins_Arduino_PIO1_5">
-               <description>Configures pin routing and optionally pin electrical features for PIO1_5 pin on &amp;lt;br/&amp;gt;Arduino UNO R3 connectors, used by &amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;Inventek ISM43362 WiFi Shield (DATARDY).</description>
-               <options>
-                  <callFromInitBoot>false</callFromInitBoot>
-                  <coreID>cm33_core0</coreID>
-                  <enableClock>true</enableClock>
-               </options>
-               <dependencies>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPins_Arduino_PIO1_5">
-                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-               </dependencies>
-               <pins>
-                  <pin peripheral="GPIO" signal="PIO1, 5" pin_num="31" pin_signal="PIO1_5/FC0_RXD_SDA_MOSI_DATA/SD0_D2/CTIMER2_MAT0/SCT_GPI0"/>
-               </pins>
-            </function>
-            <function name="BOARD_InitPins_Arduino_USART2">
-               <description>Configures pin routing and optionally pin electrical features for USART on &amp;lt;br/&amp;gt;Arduino UNO R3 connectors.</description>
-               <options>
-                  <callFromInitBoot>false</callFromInitBoot>
-                  <coreID>cm33_core0</coreID>
-                  <enableClock>true</enableClock>
-               </options>
-               <dependencies>
-                  <dependency resourceType="Peripheral" resourceId="FLEXCOMM2" description="Peripheral FLEXCOMM2 is not initialized" problem_level="1" source="Pins:BOARD_InitPins_Arduino_USART2">
-                     <feature name="initialized" evaluation="equal">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-                  <dependency resourceType="SWComponent" resourceId="platform.drivers.common" description="Pins initialization requires the COMMON Driver in the project." problem_level="2" source="Pins:BOARD_InitPins_Arduino_USART2">
-                     <feature name="enabled" evaluation="equal" configuration="cm33_core1">
-                        <data>true</data>
-                     </feature>
-                  </dependency>
-               </dependencies>
-               <pins>
-                  <pin peripheral="FLEXCOMM2" signal="TXD_SCL_MISO_WS" pin_num="27" pin_signal="PIO0_27/FC2_TXD_SCL_MISO_WS/CTIMER3_MAT2/SCT0_OUT6/FC7_RXD_SDA_MOSI_DATA/PLU_OUT0/SECURE_GPIO0_27"/>
-                  <pin peripheral="FLEXCOMM2" signal="RXD_SDA_MOSI_DATA" pin_num="3" pin_signal="PIO1_24/FC2_RXD_SDA_MOSI_DATA/SCT0_OUT1/SD1_D1/FC3_SSEL3/PLU_OUT6"/>
                </pins>
             </function>
          </functions_list>
@@ -846,14 +746,12 @@
                   <clock_source id="SYSCON.XTAL32M.outFreq" value="16 MHz" locked="false" enabled="true"/>
                </clock_sources>
                <clock_outputs>
-                  <clock_output id="FXCOM0_clock.outFreq" value="12 MHz" locked="false" accuracy=""/>
                   <clock_output id="System_clock.outFreq" value="150 MHz" locked="false" accuracy=""/>
                </clock_outputs>
                <clock_settings>
                   <setting id="PLL0_Mode" value="Normal" locked="false"/>
                   <setting id="ENABLE_CLKIN_ENA" value="Enabled" locked="false"/>
                   <setting id="ENABLE_SYSTEM_CLK_OUT" value="Enabled" locked="false"/>
-                  <setting id="SYSCON.FCCLKSEL0.sel" value="ANACTRL.fro_12m_clk" locked="false"/>
                   <setting id="SYSCON.MAINCLKSELB.sel" value="SYSCON.PLL0_BYPASS" locked="false"/>
                   <setting id="SYSCON.PLL0CLKSEL.sel" value="SYSCON.CLK_IN_EN" locked="false"/>
                   <setting id="SYSCON.PLL0M_MULT.scale" value="150" locked="true"/>
@@ -885,7 +783,7 @@
                <options/>
                <dependencies/>
                <instances>
-                  <instance name="ACCEL" uuid="4cedbf23-d746-4b23-91f9-169c711d8ecd" type="flexcomm_i2c" type_id="flexcomm_i2c_567d1a9d97c12e5d39b00259c3436dc4" mode="I2C_Polling" peripheral="FLEXCOMM4" enabled="false" comment="" custom_name_enabled="true">
+                  <instance name="ACCEL" uuid="bc8a0ccf-ee97-456c-8f85-6ff372746e67" type="flexcomm_i2c" type_id="flexcomm_i2c_567d1a9d97c12e5d39b00259c3436dc4" mode="I2C_Polling" peripheral="FLEXCOMM4" enabled="false" comment="" custom_name_enabled="true">
                      <config_set name="fsl_i2c" quick_selection="QS_I2C_Master">
                         <setting name="i2c_mode" value="kI2C_Master"/>
                         <setting name="clockSource" value="FXCOMFunctionClock"/>
@@ -897,7 +795,7 @@
                         </struct>
                      </config_set>
                   </instance>
-                  <instance name="DEBUG_UART" uuid="849d42e1-4f69-41ee-9448-c805305c9b8b" type="flexcomm_usart" type_id="flexcomm_usart_fcc110cc6b16332e9dfd9e0df675e21f" mode="polling" peripheral="FLEXCOMM0" enabled="false" comment="" custom_name_enabled="true">
+                  <instance name="DEBUG_UART" uuid="dc4b6daa-d7f8-470e-9638-3f6b7ed87c40" type="flexcomm_usart" type_id="flexcomm_usart_fcc110cc6b16332e9dfd9e0df675e21f" mode="polling" peripheral="FLEXCOMM0" enabled="false" comment="" custom_name_enabled="true">
                      <config_set name="usartConfig_t">
                         <struct name="usartConfig">
                            <setting name="clockSource" value="FXCOMFunctionClock"/>
@@ -914,10 +812,10 @@
                         </struct>
                      </config_set>
                   </instance>
-                  <instance name="LEDS" uuid="fd92a0eb-9c76-4326-a30c-567a42c19e01" type="lpc_gpio" type_id="lpc_gpio_8c9ab9b3668a514c1f4609fe43001865" mode="GPIO" peripheral="GPIO" enabled="false" comment="" custom_name_enabled="true">
+                  <instance name="LEDS" uuid="9e8ca927-fe4a-4ae0-8175-18310106ac8d" type="lpc_gpio" type_id="lpc_gpio_8c9ab9b3668a514c1f4609fe43001865" mode="GPIO" peripheral="GPIO" enabled="false" comment="" custom_name_enabled="true">
                      <config_set name="lpc_gpio"/>
                   </instance>
-                  <instance name="SW" uuid="6d6c9e58-90c2-4662-b8be-6f1465b0099f" type="lpc_gpio" type_id="lpc_gpio_8c9ab9b3668a514c1f4609fe43001865" mode="GPIO" peripheral="GPIO" enabled="false" comment="" custom_name_enabled="true">
+                  <instance name="SW" uuid="1419563a-e3a6-4f9c-9933-c1507907a79e" type="lpc_gpio" type_id="lpc_gpio_8c9ab9b3668a514c1f4609fe43001865" mode="GPIO" peripheral="GPIO" enabled="false" comment="" custom_name_enabled="true">
                      <config_set name="lpc_gpio"/>
                   </instance>
                </instances>
@@ -930,15 +828,15 @@
             </functional_group>
          </functional_groups>
          <components>
-            <component name="system" uuid="c541d045-35a7-407a-8954-1e5d90d61b00" type_id="system_54b53072540eeeb8f8e9343e71f28176">
+            <component name="system" uuid="0a571d27-8c97-4150-b7be-5de89eefe8ea" type_id="system_54b53072540eeeb8f8e9343e71f28176">
                <config_set_global name="global_system_definitions"/>
             </component>
-            <component name="msg" uuid="187aa10f-5486-4431-a0f0-02039d731eec" type_id="msg_6e2baaf3b97dbeef01c0043275f9a0e7">
+            <component name="msg" uuid="cec1c4b3-d048-472a-9e7c-0ebf3aa3b3fa" type_id="msg_6e2baaf3b97dbeef01c0043275f9a0e7">
                <config_set_global name="global_messages"/>
             </component>
          </components>
       </periphs>
-      <tee name="TEE" version="2.0" enabled="false" update_project_code="true">
+      <tee name="TEE" version="1.0" enabled="false" update_project_code="true">
          <generated_project_files/>
          <tee_profile>
             <processor_version>0.0.0</processor_version>

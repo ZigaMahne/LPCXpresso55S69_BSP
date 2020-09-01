@@ -7,6 +7,11 @@
   <repository type="git">https://github.com/MDK-Packs/LPCXpresso55S69_BSP.git</repository>
 
   <releases>
+    <release version="1.0.1-dev2">
+      Update board configuration files
+      Drivers:
+      - CMSIS-VIO driver: added vioBUTTON1 and vioBUTTON2
+    </release>
     <release version="1.0.1-dev1">
       Update RTE_Device.h configuration files
     </release>
