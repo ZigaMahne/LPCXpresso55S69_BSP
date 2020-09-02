@@ -13,6 +13,17 @@ package_id: LPC55S69JBD100
 mcu_data: ksdk2_0
 processor_version: 7.0.1
 board: LPCXpresso55S69
+pin_labels:
+- {pin_num: '60', pin_signal: PIO0_26/FC2_RXD_SDA_MOSI_DATA/CLKOUT/CT_INP14/SCT0_OUT5/USB0_IDVALUE/FC0_SCK/HS_SPI_MOSI/SECURE_GPIO0_26, label: 'P17[13]/P23[6]/LSPI_HS_MOSI',
+  identifier: ARDUINO_SPI_MOSI}
+- {pin_num: '27', pin_signal: PIO0_27/FC2_TXD_SCL_MISO_WS/CTIMER3_MAT2/SCT0_OUT6/FC7_RXD_SDA_MOSI_DATA/PLU_OUT0/SECURE_GPIO0_27, label: 'P18[13]/P24[4]/FC2_USART_TXD_ARD',
+  identifier: ARDUINO_USART_TX}
+- {pin_num: '59', pin_signal: PIO1_1/FC3_RXD_SDA_MOSI_DATA/CT_INP3/SCT_GPI5/HS_SPI_SSEL1/USB1_OVERCURRENTN/PLU_OUT4, label: 'P17[15]/P23[3]/LSPI_HS_SSEL1', identifier: ARDUINO_SPI_SSN}
+- {pin_num: '61', pin_signal: PIO1_2/CTIMER0_MAT3/SCT_GPI6/HS_SPI_SCK/USB1_PORTPWRN/PLU_OUT5, label: 'P17[9]/P23[4]/LSPI_HS_SCK', identifier: ARDUINO_SPI_SCK}
+- {pin_num: '62', pin_signal: PIO1_3/SCT0_OUT4/HS_SPI_MISO/USB0_PORTPWRN/PLU_OUT6, label: 'P17[11]/P23[5]/LSPI_HS_MISO', identifier: ARDUINO_SPI_MISO}
+- {pin_num: '31', pin_signal: PIO1_5/FC0_RXD_SDA_MOSI_DATA/SD0_D2/CTIMER2_MAT0/SCT_GPI0, label: 'P17[17]/P24[1]/PIO1_5_GPIO_ARD', identifier: ARDUINO_PIO1_5}
+- {pin_num: '3', pin_signal: PIO1_24/FC2_RXD_SDA_MOSI_DATA/SCT0_OUT1/SD1_D1/FC3_SSEL3/PLU_OUT6, label: 'P18[15]/P18[10]/P24[3]/PLU_OUT6/GPIO/FC2_USART_RXD_ARD/SD1_D1',
+  identifier: ARDUINO_USART_RX}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 /* clang-format on */
@@ -883,12 +894,12 @@ void BOARD_InitPins_Arduino_SPI8(void)
     /* Enables the clock for the GPIO1 module */
     CLOCK_EnableClock(kCLOCK_Gpio1);
 
-    gpio_pin_config_t gpio1_pin59_config = {
+    gpio_pin_config_t ARDUINO_SPI_SSN_config = {
         .pinDirection = kGPIO_DigitalOutput,
         .outputLogic = 1U
     };
     /* Initialize GPIO functionality on pin PIO1_1 (pin 59)  */
-    GPIO_PinInit(GPIO, 1U, 1U, &gpio1_pin59_config);
+    GPIO_PinInit(BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_GPIO, BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_PORT, BOARD_INITPINS_ARDUINO_SPI8_ARDUINO_SPI_SSN_PIN, &ARDUINO_SPI_SSN_config);
 
     IOCON->PIO[0][26] = ((IOCON->PIO[0][26] &
                           /* Mask bits to zero which are setting */
@@ -987,6 +998,7 @@ BOARD_InitPins_Arduino_PIO1_5:
  * 
  * 
  * 
+ * 
  * Inventek ISM43362 WiFi Shield (DATARDY).
  *
  * END ****************************************************************************************************************/
@@ -999,12 +1011,12 @@ void BOARD_InitPins_Arduino_PIO1_5(void)
     /* Enables the clock for the GPIO1 module */
     CLOCK_EnableClock(kCLOCK_Gpio1);
 
-    gpio_pin_config_t gpio1_pin31_config = {
+    gpio_pin_config_t ARDUINO_PIO1_5_config = {
         .pinDirection = kGPIO_DigitalInput,
         .outputLogic = 0U
     };
     /* Initialize GPIO functionality on pin PIO1_5 (pin 31)  */
-    GPIO_PinInit(GPIO, 1U, 5U, &gpio1_pin31_config);
+    GPIO_PinInit(BOARD_INITPINS_ARDUINO_PIO1_5_ARDUINO_PIO1_5_GPIO, BOARD_INITPINS_ARDUINO_PIO1_5_ARDUINO_PIO1_5_PORT, BOARD_INITPINS_ARDUINO_PIO1_5_ARDUINO_PIO1_5_PIN, &ARDUINO_PIO1_5_config);
 
     IOCON->PIO[1][5] = ((IOCON->PIO[1][5] &
                          /* Mask bits to zero which are setting */
