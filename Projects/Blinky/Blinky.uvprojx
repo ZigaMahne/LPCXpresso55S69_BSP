@@ -373,9 +373,9 @@
             <ScatterFile>.\RTE\Device\LPC55S69JBD100_cm33_core0\LPC55S69_cm33_core0_flash.scf</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
-            <Misc></Misc>
+            <Misc>--diag_suppress=L6314</Misc>
             <LinkerInputFile></LinkerInputFile>
-            <DisabledWarnings>6314</DisabledWarnings>
+            <DisabledWarnings></DisabledWarnings>
           </LDads>
         </TargetArmAds>
       </TargetOption>
