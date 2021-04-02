@@ -1,11 +1,11 @@
 /******************************************************************************
  * @file     vio_LPCXpresso55S69.c
  * @brief    Virtual I/O implementation for NXP LPCXpresso55S69 board
- * @version  V1.0.0
- * @date     2. June 2020
+ * @version  V1.0.1
+ * @date     1. April 2021
  ******************************************************************************/
 /*
- * Copyright (c) 2020 Arm Limited (or its affiliates). All rights reserved.
+ * Copyright (c) 2020 - 2021 Arm Limited (or its affiliates). All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -28,10 +28,12 @@ The table below lists the physical I/O mapping of this CMSIS-Driver VIO implemen
 
 Virtual Resource  | Variable       | Physical Resource on LPCXpresso55S69           |
 :-----------------|:---------------|:-----------------------------------------------|
-vioBUTTON0        | vioSignalIn.0  | PIO1_9: Button USER (SW3)                      |
-vioLED0           | vioSignalOut.0 | PIO1_6: LED RED                                |
-vioLED1           | vioSignalOut.1 | PIO1_7: LED GREEN                              |
-vioLED2           | vioSignalOut.2 | PIO1_4: LED BLUE                               |
+vioBUTTON0        | vioSignalIn.0  | PIO1_9 : Button USER (SW3)                     |
+vioBUTTON1        | vioSignalIn.1  | PIO0_5 : Button ISP (SW1)                      |
+vioBUTTON2        | vioSignalIn.2  | PIO1_18: Button WAKEUP (SW2)                   |
+vioLED0           | vioSignalOut.0 | PIO1_6 : LED RED                               |
+vioLED1           | vioSignalOut.1 | PIO1_7 : LED GREEN                             |
+vioLED2           | vioSignalOut.2 | PIO1_4 : LED BLUE                              |
 */
 
 #include <stdio.h>
@@ -201,7 +203,7 @@ uint32_t vioGetSignal (uint32_t mask) {
       vioSignalIn &= ~vioBUTTON0;
     }
   }
-  // USER button (S1)
+  // RESET button (S1)
   if ((mask & vioBUTTON1) != 0U) {
     if (GPIO_PinRead(BOARD_SW1_GPIO, BOARD_SW1_GPIO_PORT, BOARD_SW1_GPIO_PIN) == 0U) {
       vioSignalIn |=  vioBUTTON1;
@@ -209,7 +211,7 @@ uint32_t vioGetSignal (uint32_t mask) {
       vioSignalIn &= ~vioBUTTON1;
     }
   }
-  // USER button (S2)
+  // WAKEUP button (S2)
   if ((mask & vioBUTTON2) != 0U) {
     if (GPIO_PinRead(BOARD_SW2_GPIO, BOARD_SW2_GPIO_PORT, BOARD_SW2_GPIO_PIN) == 0U) {
       vioSignalIn |=  vioBUTTON2;
