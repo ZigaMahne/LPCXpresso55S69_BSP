@@ -7,6 +7,10 @@
   <repository type="git">https://github.com/MDK-Packs/LPCXpresso55S69_BSP.git</repository>
 
   <releases>
+    <release version="1.2.0-dev1">
+      Projects examples update:
+      - config files to CMSIS 5.8.0
+    </release>
     <release version="1.2.0-dev0">
       Drivers:
       - VIO: updated lists the physical I/O mapping
