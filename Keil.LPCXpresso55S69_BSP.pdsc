@@ -7,14 +7,13 @@
   <repository type="git">https://github.com/MDK-Packs/LPCXpresso55S69_BSP.git</repository>
 
   <releases>
-    <release version="1.2.0-dev1">
-      Projects examples update:
-      - config files to CMSIS 5.8.0
-    </release>
-    <release version="1.2.0-dev0">
+    <release version="1.1.1" date="2021-07-12">
       Drivers:
-      - VIO: updated lists the physical I/O mapping
-      Platform project update (synchronize with CB_Lab4Layer):
+      - VIO: update physical I/O mapping information
+      Blinky project:
+      - update RTX configuration (CMSIS 5.8.0)
+      Platform project (synchronize with CB_Lab4Layer):
+      - update RTX configuration (CMSIS 5.8.0)
       - use packs with fixed version (reproducible build)
       - compiler optimization -O1
     </release>
