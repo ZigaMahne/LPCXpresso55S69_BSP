@@ -17,11 +17,11 @@
 /* clang-format off */
 /* TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Clocks v7.0
+product: Clocks v12.0
 processor: LPC55S69
 package_id: LPC55S69JBD100
 mcu_data: ksdk2_0
-processor_version: 9.0.0
+processor_version: 14.0.0
 board: LPCXpresso55S69
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS **********/
 /* clang-format on */
@@ -37,8 +37,6 @@ board: LPCXpresso55S69
 /*******************************************************************************
  * Variables
  ******************************************************************************/
-/* System clock frequency. */
-extern uint32_t SystemCoreClock;
 
 /*******************************************************************************
  ************************ BOARD_InitBootClocks function ************************
@@ -84,7 +82,7 @@ void BOARD_BootClockFRO12M(void)
     /*!< Set up clock selectors - Attach clocks to the peripheries */
     CLOCK_AttachClk(kFRO12M_to_MAIN_CLK);                 /*!< Switch MAIN_CLK to FRO12M */
 
-    /*< Set SystemCoreClock variable. */
+    /*!< Set SystemCoreClock variable. */
     SystemCoreClock = BOARD_BOOTCLOCKFRO12M_CORE_CLOCK;
 #endif
 }
@@ -132,7 +130,7 @@ void BOARD_BootClockFROHF96M(void)
     /*!< Set up clock selectors - Attach clocks to the peripheries */
     CLOCK_AttachClk(kFRO_HF_to_MAIN_CLK);                 /*!< Switch MAIN_CLK to FRO_HF */
 
-    /*< Set SystemCoreClock variable. */
+    /*!< Set SystemCoreClock variable. */
     SystemCoreClock = BOARD_BOOTCLOCKFROHF96M_CORE_CLOCK;
 #endif
 }
@@ -205,7 +203,7 @@ void BOARD_BootClockPLL100M(void)
     /*!< Set up clock selectors - Attach clocks to the peripheries */
     CLOCK_AttachClk(kPLL0_to_MAIN_CLK);                 /*!< Switch MAIN_CLK to PLL0 */
 
-    /*< Set SystemCoreClock variable. */
+    /*!< Set SystemCoreClock variable. */
     SystemCoreClock = BOARD_BOOTCLOCKPLL100M_CORE_CLOCK;
 #endif
 }
@@ -305,7 +303,7 @@ void BOARD_BootClockPLL150M(void)
     CLOCK_AttachClk(kFRO12M_to_FLEXCOMM2);                 /*!< Switch FLEXCOMM2 to FRO12M */
     CLOCK_AttachClk(kFRO_HF_DIV_to_HSLSPI);                 /*!< Switch HSLSPI to FRO_HF_DIV */
 
-    /*< Set SystemCoreClock variable. */
+    /*!< Set SystemCoreClock variable. */
     SystemCoreClock = BOARD_BOOTCLOCKPLL150M_CORE_CLOCK;
 #endif
 }

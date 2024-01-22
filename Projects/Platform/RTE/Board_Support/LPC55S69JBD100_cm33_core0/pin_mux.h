@@ -220,11 +220,11 @@ void BOARD_InitUSBPins(void); /* Function assigned for the Cortex-M33 (Core #0) 
   @{ */
 
 /* Symbols to be used with GPIO driver */
-#define BOARD_INITLEDSPINS_LED_BULE_GPIO GPIO                /*!<@brief GPIO peripheral base pointer */
-#define BOARD_INITLEDSPINS_LED_BULE_GPIO_PIN_MASK (1U << 4U) /*!<@brief GPIO pin mask */
-#define BOARD_INITLEDSPINS_LED_BULE_PORT 1U                  /*!<@brief PORT peripheral base pointer */
-#define BOARD_INITLEDSPINS_LED_BULE_PIN 4U                   /*!<@brief PORT pin number */
-#define BOARD_INITLEDSPINS_LED_BULE_PIN_MASK (1U << 4U)      /*!<@brief PORT pin mask */
+#define BOARD_INITLEDSPINS_LED_BLUE_GPIO GPIO                /*!<@brief GPIO peripheral base pointer */
+#define BOARD_INITLEDSPINS_LED_BLUE_GPIO_PIN_MASK (1U << 4U) /*!<@brief GPIO pin mask */
+#define BOARD_INITLEDSPINS_LED_BLUE_PORT 1U                  /*!<@brief PORT peripheral base pointer */
+#define BOARD_INITLEDSPINS_LED_BLUE_PIN 4U                   /*!<@brief PORT pin number */
+#define BOARD_INITLEDSPINS_LED_BLUE_PIN_MASK (1U << 4U)      /*!<@brief PORT pin mask */
                                                              /* @} */
 
 /*! @name PIO1_6 (number 5), R80/P18[9]/LEDB/PWM_ARD

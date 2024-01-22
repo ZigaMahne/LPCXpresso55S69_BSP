@@ -7,11 +7,11 @@
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Pins v9.0
+product: Pins v14.0
 processor: LPC55S69
 package_id: LPC55S69JBD100
 mcu_data: ksdk2_0
-processor_version: 9.0.0
+processor_version: 14.0.0
 board: LPCXpresso55S69
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
@@ -370,12 +370,12 @@ void BOARD_InitLEDsPins(void)
     /* Enables the clock for the GPIO1 module */
     CLOCK_EnableClock(kCLOCK_Gpio1);
 
-    gpio_pin_config_t LED_BULE_config = {
+    gpio_pin_config_t LED_BLUE_config = {
         .pinDirection = kGPIO_DigitalOutput,
         .outputLogic = 1U
     };
     /* Initialize GPIO functionality on pin PIO1_4 (pin 1)  */
-    GPIO_PinInit(BOARD_INITLEDSPINS_LED_BULE_GPIO, BOARD_INITLEDSPINS_LED_BULE_PORT, BOARD_INITLEDSPINS_LED_BULE_PIN, &LED_BULE_config);
+    GPIO_PinInit(BOARD_INITLEDSPINS_LED_BLUE_GPIO, BOARD_INITLEDSPINS_LED_BLUE_PORT, BOARD_INITLEDSPINS_LED_BLUE_PIN, &LED_BLUE_config);
 
     gpio_pin_config_t LED_RED_config = {
         .pinDirection = kGPIO_DigitalOutput,
@@ -391,7 +391,7 @@ void BOARD_InitLEDsPins(void)
     /* Initialize GPIO functionality on pin PIO1_7 (pin 9)  */
     GPIO_PinInit(BOARD_INITLEDSPINS_LED_GREEN_GPIO, BOARD_INITLEDSPINS_LED_GREEN_PORT, BOARD_INITLEDSPINS_LED_GREEN_PIN, &LED_GREEN_config);
 
-    const uint32_t LED_BULE = (/* Pin is configured as PIO1_4 */
+    const uint32_t LED_BLUE = (/* Pin is configured as PIO1_4 */
                                IOCON_PIO_FUNC0 |
                                /* Selects pull-up function */
                                IOCON_PIO_MODE_PULLUP |
@@ -404,7 +404,7 @@ void BOARD_InitLEDsPins(void)
                                /* Open drain is disabled */
                                IOCON_PIO_OPENDRAIN_DI);
     /* PORT1 PIN4 (coords: 1) is configured as PIO1_4 */
-    IOCON_PinMuxSet(IOCON, BOARD_INITLEDSPINS_LED_BULE_PORT, BOARD_INITLEDSPINS_LED_BULE_PIN, LED_BULE);
+    IOCON_PinMuxSet(IOCON, BOARD_INITLEDSPINS_LED_BLUE_PORT, BOARD_INITLEDSPINS_LED_BLUE_PIN, LED_BLUE);
 
     const uint32_t LED_RED = (/* Pin is configured as PIO1_6 */
                               IOCON_PIO_FUNC0 |
