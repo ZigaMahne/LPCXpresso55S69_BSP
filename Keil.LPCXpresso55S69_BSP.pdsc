@@ -8,6 +8,11 @@
   <license>LICENSE</license>
 
   <releases>
+    <release version="1.2.0-dev0">
+      Drivers:
+      - CMSIS-Driver VIO:
+      -- Update VIO to API 1.0.0
+    </release>
     <release version="1.1.2-dev1">
       Pack Description:
       - Add LICENSE file
@@ -73,7 +78,7 @@
 
   <components>
     <!-- VIO driver -->
-    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="LPCXpresso55S69" Cversion="1.0.2" Capiversion="0.1.0" condition="LPCXpresso55S69 VIO">
+    <component Cclass="CMSIS Driver" Cgroup="VIO" Csub="Board" Cvariant="LPCXpresso55S69" Cversion="2.0.0" Capiversion="1.0.0" condition="LPCXpresso55S69 VIO">
       <description>Virtual I/O implementation for NXP LPCXpresso55S69 Board</description>
       <RTE_Components_h>
         #define RTE_VIO_BOARD
